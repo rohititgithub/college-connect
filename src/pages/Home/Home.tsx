@@ -1,4 +1,5 @@
 import AboutSection from "./AboutSection";
+import BrandsSection from "./BrandsSection";
 import CollegesSection from "./CollegesSection";
 import ContactSection from "./ContactSection";
 import HeroSection from "./HeroSection";
@@ -15,11 +16,12 @@ export default function Home() {
       <CollegesSection />
       <ServicesSection />
       <InfoSection />
+      <BrandsSection />
       <StatsSection />
       <TestimonialsSection />
-      <ContactSection />
       <AboutSection />
       <VisionMissionSection />
+      <ContactSection />
     </div>
   );
 }

@@ -1,6 +1,56 @@
 import TestimonialCard from "../../components/TestimonialCard";
 
+type testimonial = {
+  author: string;
+  college: string;
+  event?: string;
+  review: string;
+};
+
 export default function TestimonialsSection() {
+  const testimonials: testimonial[] = [
+    {
+      author: "Krish",
+      college: "BITS Pilani",
+      event: "Oasis",
+      review:
+        "From connecting us with relevant brands to smooth coordination till the event day, their team handled everything professionally. The sponsorship support helped us scale our event smoothly and successfully.",
+    },
+    {
+      author: "Rohit",
+      college: "IIT Kanpur",
+      event: "Antaragini",
+      review:
+        "colledge connect bridges the gap between colleges and brands perfectly. The process was transparent, quick, and completely stress-free for student organizers.",
+    },
+    {
+      author: "Tanvi",
+      college: "Jaipuriya",
+      review:
+        "We collaborated with colledge connect for our cultural fest, and the experience was excellent. They helped us secure relevant brand collaborations and supported us throughout the entire event process.",
+    },
+    {
+      author: "Dhanvi",
+      college: "COEP",
+      event: "Impressions",
+      review:
+        "colledge connect connected us with brands that aligned well with our audience. Clear communication and smooth execution made the whole sponsorship process easy.",
+    },
+    {
+      author: "Hardik",
+      college: "IIT Bombay",
+      event: "Mood Indigo",
+      review:
+        "Finding sponsors is usually challenging, but colledge connect made it simple and efficient. Their strong brand network helped elevate our event quality and reach.",
+    },
+    {
+      author: "Vedika",
+      college: "Lady Irwin College",
+      review:
+        "The team at colledge connect guided us end-to-end and ensured everything ran smoothly. We received both financial support and meaningful brand collaborations.",
+    },
+  ];
+
   return (
     <section
       id="testimonials"
@@ -18,58 +68,22 @@ export default function TestimonialsSection() {
           {
             "--width": "488px",
             "--height": "330px",
-            "--quantity": 9,
+            "--quantity": testimonials.length,
             "--duration": "54s",
           } as React.CSSProperties
         }
         className="slider my-6 w-full max-w-full self-start overflow-hidden"
       >
         <div className="list relative flex min-w-[calc(var(--width)*var(--quantity))]">
-          <TestimonialCard
-            position={1}
-            author="Lee Davis"
-            review="Lorem ipsum dolor sit amet consectetur. In et arcu nulla magnis pulvinar. Ut morbi amet ipsum lectus tristique sapien sed enim. Egestas adipiscing non pulvinar a. Ultricies sem commodo a malesuada elementum morbi a in. "
-          />
-          <TestimonialCard
-            position={2}
-            author="Daniel Corwin"
-            review="Lorem ipsum dolor sit amet consectetur. Sed ut semper sodales id fringilla posuere egestas. Eget ultrices adipiscing augue urna."
-          />
-          <TestimonialCard
-            position={3}
-            author="Bonnie Upton"
-            review="Lorem ipsum dolor sit amet consectetur. Sed quam sed duis commodo adipiscing ipsum et. Arcu urna sit lectus malesuada convallis integer et. Tempor velit euismod feugiat in proin habitant imperdiet vulputate."
-          />
-          <TestimonialCard
-            position={4}
-            author="Lee Davis"
-            review="Lorem ipsum dolor sit amet consectetur. In et arcu nulla magnis pulvinar. Ut morbi amet ipsum lectus tristique sapien sed enim. Egestas adipiscing non pulvinar a. Ultricies sem commodo a malesuada elementum morbi a in. "
-          />
-          <TestimonialCard
-            position={5}
-            author="Daniel Corwin"
-            review="Lorem ipsum dolor sit amet consectetur. Sed ut semper sodales id fringilla posuere egestas. Eget ultrices adipiscing augue urna."
-          />
-          <TestimonialCard
-            position={6}
-            author="Bonnie Upton"
-            review="Lorem ipsum dolor sit amet consectetur. Sed quam sed duis commodo adipiscing ipsum et. Arcu urna sit lectus malesuada convallis integer et. Tempor velit euismod feugiat in proin habitant imperdiet vulputate."
-          />
-          <TestimonialCard
-            position={7}
-            author="Lee Davis"
-            review="Lorem ipsum dolor sit amet consectetur. In et arcu nulla magnis pulvinar. Ut morbi amet ipsum lectus tristique sapien sed enim. Egestas adipiscing non pulvinar a. Ultricies sem commodo a malesuada elementum morbi a in. "
-          />
-          <TestimonialCard
-            position={8}
-            author="Daniel Corwin"
-            review="Lorem ipsum dolor sit amet consectetur. Sed ut semper sodales id fringilla posuere egestas. Eget ultrices adipiscing augue urna."
-          />
-          <TestimonialCard
-            position={9}
-            author="Bonnie Upton"
-            review="Lorem ipsum dolor sit amet consectetur. Sed quam sed duis commodo adipiscing ipsum et. Arcu urna sit lectus malesuada convallis integer et. Tempor velit euismod feugiat in proin habitant imperdiet vulputate."
-          />
+          {testimonials.map((testimonial, index) => (
+            <TestimonialCard
+              position={index + 1}
+              author={testimonial.author}
+              college={testimonial.college}
+              event={testimonial.event}
+              review={testimonial.review}
+            />
+          ))}
         </div>
       </div>
       <div className="absolute -right-32 -bottom-24 -z-10 size-88 rounded-full bg-[#234AFF]/25 blur-3xl" />

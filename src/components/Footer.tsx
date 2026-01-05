@@ -7,7 +7,7 @@ import {
   Phone,
   Youtube,
 } from "lucide-react";
-import Logo from "../assets/Coll-Edge_Connect_Logo.png";
+import Logo from "../assets/Coll-Edge_Connect_Logo.svg";
 import { Link } from "react-router";
 
 export default function Footer() {
@@ -30,8 +30,8 @@ export default function Footer() {
             className="self-start"
           />
           <span>
-            Coll-Edge Connect Is One Of The Fastest Growing Global Youth
-            Community
+            India's fastest bridge between Colleges & Brands. Sponsorships,
+            activations and engagement simplified
           </span>
           <div className="flex gap-4">
             <Link

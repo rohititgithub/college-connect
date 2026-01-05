@@ -4,12 +4,14 @@ type SliderCollegeCardProps = {
   position: number;
   image: string;
   name: string;
+  footfall: number;
 };
 
 export default function SliderCollegeCard({
   position,
   image,
   name,
+  footfall,
 }: SliderCollegeCardProps) {
   return (
     <div
@@ -28,7 +30,7 @@ export default function SliderCollegeCard({
             className="max-h-[13.5px] w-3.75"
           />
           <span className="text-xs font-medium text-[#5F5F5F]">
-            Footfall - 20,000
+            Footfall - {footfall}
           </span>
         </div>
       </div>

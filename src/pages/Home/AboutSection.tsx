@@ -9,7 +9,8 @@ export default function AboutSection() {
       "We believe in fostering meaningful collaborations that empower students, enhance campus experiences, and help brands become a part of students' most memorable moments. With a strategic and innovation-led approach, we work to shape the future of student-brand engagement.",
     ],
     work: [
-      "Lorem ipsum dolor sit amet consectetur. Sed quam sed duis commodo adipiscing ipsum et. Arcu urna sit lectus malesuada convallis integer et. Tempor velit euismod feugiat in proin habitant imperdiet vulputate.",
+      "We help college events secure the right sponsorships, brand collaborations, and partnerships—making event planning smoother and more impactful.",
+      "We work closely with college fests, cultural events, technical events, and student-led initiatives to connect them with brands that align with their audience and vision. From initial outreach to final execution, we manage the entire sponsorship process.",
     ],
   };
 

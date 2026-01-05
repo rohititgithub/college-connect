@@ -1,4 +1,4 @@
-import Logo from "../../assets/Coll-Edge_Connect_Logo_Light.png";
+import Logo from "../../assets/Coll-Edge_Connect_Icon_Light.svg";
 
 export default function HeroSection() {
   return (
@@ -20,8 +20,8 @@ export default function HeroSection() {
       <img
         src={Logo}
         alt="Coll-Edge Connect Logo"
-        width={166}
-        className="absolute top-[calc(50%+4rem)] -right-16"
+        width={360}
+        className="absolute top-[calc(50%-3.25rem)] -right-64"
       />
     </section>
   );

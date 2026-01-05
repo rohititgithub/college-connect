@@ -46,43 +46,56 @@ export default function CollegesSection() {
             position={1}
             name="IIT Kanpur"
             image={IITKanpurLogo}
+            footfall={50000}
           />
           <SliderCollegeCard
             position={2}
             name="IIT Guwahati"
             image={IITGuwahatiLogo}
+            footfall={85000}
           />
           <SliderCollegeCard
             position={3}
             name="BITS Pilani"
             image={BITSPilaniLogo}
+            footfall={20000}
           />
           <SliderCollegeCard
             position={4}
             name="Hansraj College"
             image={HansrajCollegeLogo}
+            footfall={25000}
           />
           <SliderCollegeCard
             position={5}
             name="Hindu College"
             image={HinduCollegeLogo}
+            footfall={30000}
           />
           <SliderCollegeCard
             position={6}
             name="Lady Irwin College"
             image={LadyIrwinCollegeLogo}
+            footfall={8000}
           />
           <SliderCollegeCard
             position={7}
             name="Ruia College"
             image={RuiaCollegeLogo}
+            footfall={12000}
           />
           <SliderCollegeCard
             position={8}
             name="IIT Bombay"
             image={IITBombayLogo}
+            footfall={145000}
           />
-          <SliderCollegeCard position={9} name="Symbiosis" image={SIBMLogo} />
+          <SliderCollegeCard
+            position={9}
+            name="Symbiosis"
+            image={SIBMLogo}
+            footfall={15000}
+          />
         </div>
       </div>
       <div
@@ -101,38 +114,55 @@ export default function CollegesSection() {
             position={1}
             name="NIIT"
             image={NIITNeemranaLogo}
+            footfall={5000}
           />
-          <SliderCollegeCard position={2} name="COEP" image={COEPLogo} />
+          <SliderCollegeCard
+            position={2}
+            name="COEP"
+            image={COEPLogo}
+            footfall={18000}
+          />
           <SliderCollegeCard
             position={3}
             name="IIT Madras"
             image={IITMadrasLogo}
+            footfall={75000}
           />
-          <SliderCollegeCard position={4} name="LPU" image={LPULogo} />
+          <SliderCollegeCard
+            position={4}
+            name="LPU"
+            image={LPULogo}
+            footfall={40000}
+          />
           <SliderCollegeCard
             position={5}
             name="NMIMS"
             image={NMIMSNaviMumbaiLogo}
+            footfall={8500}
           />
           <SliderCollegeCard
             position={6}
             name="BPIT College"
             image={BPITCollegeLogo}
+            footfall={6000}
           />
           <SliderCollegeCard
             position={7}
             name="IIT Palakkad"
             image={IITPalakkadLogo}
+            footfall={3500}
           />
           <SliderCollegeCard
             position={8}
             name="Sri Venkateswara College"
             image={SriVenkateswaraCollegeLogo}
+            footfall={18000}
           />
           <SliderCollegeCard
             position={9}
             name="IIT Patna"
             image={IITPatnaLogo}
+            footfall={7000}
           />
         </div>
       </div>

@@ -1,4 +1,4 @@
-import Logo from "../assets/Coll-Edge_Connect_Logo.png";
+import Logo from "../assets/Coll-Edge_Connect_Logo.svg";
 
 export default function Header() {
   function goTo(id: string) {
@@ -36,13 +36,6 @@ export default function Header() {
           className="cursor-pointer underline decoration-transparent underline-offset-2 transition-all hover:decoration-[#382F68] active:text-[#234AFF] active:decoration-[#234AFF]"
         >
           <span>About Us</span>
-        </button>
-        <button
-          type="button"
-          onClick={() => goTo("contact")}
-          className="cursor-pointer underline decoration-transparent underline-offset-2 transition-all hover:decoration-[#382F68] active:text-[#234AFF] active:decoration-[#234AFF]"
-        >
-          <span>Contact Us</span>
         </button>
       </nav>
       <button
