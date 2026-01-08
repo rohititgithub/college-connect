@@ -19,13 +19,110 @@ import SriVenkateswaraCollegeLogo from "../../assets/Sri_Venkateswara_College_Lo
 import IITPatnaLogo from "../../assets/Indian_Institute_of_Technology,_Patna.svg";
 
 export default function CollegesSection() {
+  const colleges = [
+    [
+      {
+        name: "IIT Kanpur",
+        logo: IITKanpurLogo,
+        footfall: 50000,
+      },
+      {
+        name: "IIT Guwahati",
+        logo: IITGuwahatiLogo,
+        footfall: 85000,
+      },
+      {
+        name: "BITS Pilani",
+        logo: BITSPilaniLogo,
+        footfall: 20000,
+      },
+      {
+        name: "Hansraj College",
+        logo: HansrajCollegeLogo,
+        footfall: 25000,
+      },
+      {
+        name: "Hindu College",
+        logo: HinduCollegeLogo,
+        footfall: 30000,
+      },
+      {
+        name: "Lady Irwin College",
+        logo: LadyIrwinCollegeLogo,
+        footfall: 8000,
+      },
+      {
+        name: "Ruia College",
+        logo: RuiaCollegeLogo,
+        footfall: 12000,
+      },
+      {
+        name: "IIT Bombay",
+        logo: IITBombayLogo,
+        footfall: 145000,
+      },
+      {
+        name: "Symbiosis",
+        logo: SIBMLogo,
+        footfall: 15000,
+      },
+    ],
+    [
+      {
+        name: "NIIT",
+        logo: NIITNeemranaLogo,
+        footfall: 5000,
+      },
+      {
+        name: "COEP",
+        logo: COEPLogo,
+        footfall: 18000,
+      },
+      {
+        name: "IIT Madras",
+        logo: IITMadrasLogo,
+        footfall: 75000,
+      },
+      {
+        name: "LPU",
+        logo: LPULogo,
+        footfall: 40000,
+      },
+      {
+        name: "NMIMS",
+        logo: NMIMSNaviMumbaiLogo,
+        footfall: 8500,
+      },
+      {
+        name: "BPIT College",
+        logo: BPITCollegeLogo,
+        footfall: 6000,
+      },
+      {
+        name: "IIT Palakkad",
+        logo: IITPalakkadLogo,
+        footfall: 3500,
+      },
+      {
+        name: "Sri Venkateswara College",
+        logo: SriVenkateswaraCollegeLogo,
+        footfall: 18000,
+      },
+      {
+        name: "IIT Patna",
+        logo: IITPatnaLogo,
+        footfall: 7000,
+      },
+    ],
+  ];
+
   return (
     <section id="colleges" className="flex flex-col gap-6">
-      <div className="mx-auto mb-12 flex w-7xl items-center gap-4">
-        <div className="h-12.5 w-16.5 rounded-full bg-[#234AFF]/60 outline-2 outline-offset-4 outline-white outline-dashed" />
+      <div className="mx-auto mb-4 flex w-full max-w-7xl items-center gap-4 px-8 lg:mb-12">
+        <div className="h-9 w-12 rounded-full bg-[#234AFF]/60 outline-2 outline-offset-4 outline-white outline-dashed lg:h-12.5 lg:w-16.5" />
         <div className="flex items-baseline gap-4">
-          <span className="text-6xl font-bold">Colleges</span>
-          <span className="text-[15px] font-bold tracking-widest text-[#234AFF] uppercase">
+          <span className="text-[32px] font-bold lg:text-6xl">Colleges</span>
+          <span className="text-[10px] font-bold tracking-widest text-[#234AFF] uppercase lg:text-[15px]">
             We Onboard
           </span>
         </div>
@@ -33,137 +130,45 @@ export default function CollegesSection() {
       <div
         style={
           {
-            "--width": "286px",
+            "--width": "max(18dvw, 256px)",
             "--height": "81px",
-            "--quantity": 9,
+            "--quantity": colleges[0].length,
             "--duration": "18s",
           } as React.CSSProperties
         }
         className="slider max-w-full self-start overflow-hidden"
       >
         <div className="list relative flex min-w-[calc(var(--width)*var(--quantity))]">
-          <SliderCollegeCard
-            position={1}
-            name="IIT Kanpur"
-            image={IITKanpurLogo}
-            footfall={50000}
-          />
-          <SliderCollegeCard
-            position={2}
-            name="IIT Guwahati"
-            image={IITGuwahatiLogo}
-            footfall={85000}
-          />
-          <SliderCollegeCard
-            position={3}
-            name="BITS Pilani"
-            image={BITSPilaniLogo}
-            footfall={20000}
-          />
-          <SliderCollegeCard
-            position={4}
-            name="Hansraj College"
-            image={HansrajCollegeLogo}
-            footfall={25000}
-          />
-          <SliderCollegeCard
-            position={5}
-            name="Hindu College"
-            image={HinduCollegeLogo}
-            footfall={30000}
-          />
-          <SliderCollegeCard
-            position={6}
-            name="Lady Irwin College"
-            image={LadyIrwinCollegeLogo}
-            footfall={8000}
-          />
-          <SliderCollegeCard
-            position={7}
-            name="Ruia College"
-            image={RuiaCollegeLogo}
-            footfall={12000}
-          />
-          <SliderCollegeCard
-            position={8}
-            name="IIT Bombay"
-            image={IITBombayLogo}
-            footfall={145000}
-          />
-          <SliderCollegeCard
-            position={9}
-            name="Symbiosis"
-            image={SIBMLogo}
-            footfall={15000}
-          />
+          {colleges[0].map((college, index) => (
+            <SliderCollegeCard
+              position={index + 1}
+              name={college.name}
+              logoImage={college.logo}
+              footfall={college.footfall}
+            />
+          ))}
         </div>
       </div>
       <div
         style={
           {
-            "--width": "286px",
+            "--width": "max(18dvw, 256px)",
             "--height": "81px",
-            "--quantity": 9,
+            "--quantity": colleges[1].length,
             "--duration": "18s",
           } as React.CSSProperties
         }
         className="slider_alternate max-w-full self-start overflow-hidden"
       >
         <div className="list relative flex min-w-[calc(var(--width)*var(--quantity))]">
-          <SliderCollegeCard
-            position={1}
-            name="NIIT"
-            image={NIITNeemranaLogo}
-            footfall={5000}
-          />
-          <SliderCollegeCard
-            position={2}
-            name="COEP"
-            image={COEPLogo}
-            footfall={18000}
-          />
-          <SliderCollegeCard
-            position={3}
-            name="IIT Madras"
-            image={IITMadrasLogo}
-            footfall={75000}
-          />
-          <SliderCollegeCard
-            position={4}
-            name="LPU"
-            image={LPULogo}
-            footfall={40000}
-          />
-          <SliderCollegeCard
-            position={5}
-            name="NMIMS"
-            image={NMIMSNaviMumbaiLogo}
-            footfall={8500}
-          />
-          <SliderCollegeCard
-            position={6}
-            name="BPIT College"
-            image={BPITCollegeLogo}
-            footfall={6000}
-          />
-          <SliderCollegeCard
-            position={7}
-            name="IIT Palakkad"
-            image={IITPalakkadLogo}
-            footfall={3500}
-          />
-          <SliderCollegeCard
-            position={8}
-            name="Sri Venkateswara College"
-            image={SriVenkateswaraCollegeLogo}
-            footfall={18000}
-          />
-          <SliderCollegeCard
-            position={9}
-            name="IIT Patna"
-            image={IITPatnaLogo}
-            footfall={7000}
-          />
+          {colleges[1].map((college, index) => (
+            <SliderCollegeCard
+              position={index + 1}
+              name={college.name}
+              logoImage={college.logo}
+              footfall={college.footfall}
+            />
+          ))}
         </div>
       </div>
     </section>

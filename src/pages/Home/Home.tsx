@@ -11,7 +11,7 @@ import VisionMissionSection from "./VisionMissionSection";
 
 export default function Home() {
   return (
-    <div id="home" className="flex flex-col gap-16">
+    <div id="home" className="flex flex-col gap-8 lg:gap-16">
       <HeroSection />
       <CollegesSection />
       <ServicesSection />

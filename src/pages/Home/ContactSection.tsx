@@ -97,35 +97,35 @@ export default function ContactSection() {
     // Contact / lead capture section
     <section
       id="contact"
-      className="relative mx-auto my-16 flex w-full max-w-7xl items-center justify-center bg-white p-16"
+      className="relative mx-auto my-16 flex w-[calc(100%-4rem)] max-w-7xl flex-col items-center justify-center gap-8 bg-white p-8 lg:flex-row lg:p-16"
     >
       {/* Backgroud gradient and Dots Graphics*/}
       <div className="absolute -top-45 -left-45 -z-10 size-100 rounded-full bg-[#144CEA]/25 blur-3xl" />
       <img
         src={Dots}
         alt="Dots Graphics"
-        className="absolute -top-15 -left-10"
+        className="absolute -top-15 -left-10 w-32 lg:w-42.25"
       />
 
       {/* Visual illustration & Heading*/}
       <div className="flex flex-1 flex-col items-center">
-        <span className="w-sm text-center text-[22px] font-bold text-[#144BE9] uppercase">
+        <span className="w-full max-w-sm text-center text-[22px] font-bold text-[#144BE9] uppercase">
           Let's build
         </span>
-        <span className="w-sm text-center text-[22px] font-bold text-[#144BE9] uppercase">
+        <span className="w-full max-w-sm text-center text-[22px] font-bold text-[#144BE9] uppercase">
           the next big campus story
         </span>
         <img
           src={ContactGraphics}
           alt="Contact Section Graphics"
           width={247}
-          className="mt-14"
+          className="mt-8 lg:mt-14"
         />
       </div>
 
       {/* Contact form */}
       <div className="flex w-full flex-1 flex-col gap-8">
-        <div className="grid w-full grid-cols-2 gap-8">
+        <div className="flex w-full flex-col gap-8 lg:grid lg:grid-cols-2">
           {/* Name field */}
           <label
             className={`${touched.name && errors.name && "border-red-500"} relative cursor-text border bg-white px-6 py-4`}

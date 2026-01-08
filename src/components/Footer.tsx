@@ -18,9 +18,9 @@ export default function Footer() {
   }
 
   return (
-    <footer className="flex flex-col items-center gap-10 bg-[#DDE7FF] pt-16 text-[#4A5565]">
+    <footer className="flex flex-col items-center gap-6 bg-[#DDE7FF] px-8 py-12 text-[#4A5565] lg:gap-10">
       {/* Footer main content grid */}
-      <div className="flex w-full max-w-7xl gap-8">
+      <div className="flex w-full max-w-7xl flex-col gap-8 lg:flex-row">
         {/* Brand summary & social links */}
         <div className="flex w-75 flex-col gap-4">
           <img
@@ -29,11 +29,11 @@ export default function Footer() {
             width={173}
             className="self-start"
           />
-          <span>
+          <span className="hidden lg:block">
             India's fastest bridge between Colleges & Brands. Sponsorships,
             activations and engagement simplified
           </span>
-          <div className="flex gap-4">
+          <div className="hidden gap-4 lg:flex">
             <Link
               to={""}
               target="_blank"
@@ -66,7 +66,7 @@ export default function Footer() {
         </div>
 
         {/* Quick navigation links */}
-        <div className="flex w-75 flex-col gap-4">
+        <div className="flex w-75 flex-col gap-2 lg:gap-4">
           <span className="text-black">Quick Links</span>
           <button
             type="button"
@@ -99,9 +99,9 @@ export default function Footer() {
         </div>
 
         {/* Contact information */}
-        <div className="ml-auto flex w-75 flex-col gap-6">
+        <div className="flex w-75 flex-col gap-3 lg:ml-auto lg:gap-6">
           <span className="text-black">Contact</span>
-          <div className="flex gap-2">
+          <div className="hidden gap-2 lg:flex">
             <MapPin size={24} className="min-w-6 text-[#155DFC]" />
             <span>198, SatyaNiketan, 3rd Floor, New Delhi - 110021</span>
           </div>
@@ -126,7 +126,7 @@ export default function Footer() {
       </div>
 
       {/* Copyright notice */}
-      <span className="self-center py-8">
+      <span className="self-center text-xs lg:text-base">
         © 2025 COLL-EDGE CONNECT. All rights reserved.
       </span>
     </footer>

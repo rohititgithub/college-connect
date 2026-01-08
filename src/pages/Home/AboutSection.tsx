@@ -17,13 +17,13 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="relative mx-auto flex w-full max-w-7xl flex-col gap-32"
+      className="relative mx-auto flex w-full max-w-7xl flex-col gap-16 px-8 lg:gap-32"
     >
-      <div className="relative flex items-baseline gap-16">
-        <span className="text-6xl font-bold">About us</span>
-        <div className="absolute -top-2.5 left-49.5 -z-10 h-15.5 w-20.5 rounded-[22px] bg-[#4673EB]/60" />
+      <div className="relative flex flex-col items-baseline gap-4 lg:flex-row lg:gap-16">
+        <span className="text-[32px] font-bold lg:text-6xl">About us</span>
+        <div className="absolute top-0.5 left-26 -z-10 h-9 w-12 rounded-[22px] bg-[#4673EB]/60 lg:-top-2.5 lg:left-49.5 lg:h-15.5 lg:w-20.5" />
 
-        <div className="mx-auto flex gap-16 border-b-2 border-black/50 text-[32px] font-bold">
+        <div className="mx-auto flex gap-8 border-b-2 border-black/50 text-2xl font-bold lg:gap-16 lg:text-[32px]">
           <button
             type="button"
             onClick={() => setTab("identity")}
@@ -34,7 +34,7 @@ export default function AboutSection() {
                 tab === "identity"
                   ? "text-[#4673EB]"
                   : "text-black/50 decoration-transparent"
-              } underline underline-offset-12 transition-all`}
+              } underline underline-offset-8 transition-all lg:underline-offset-12`}
             >
               Who Are We?
             </span>
@@ -47,16 +47,16 @@ export default function AboutSection() {
             <span
               className={`${
                 tab === "work"
-                  ? "text-[#4673EB] underline underline-offset-12"
+                  ? "text-[#4673EB]"
                   : "text-black/50 decoration-transparent"
-              } underline underline-offset-12 transition-all`}
+              } underline underline-offset-8 transition-all lg:underline-offset-12`}
             >
               What We Do?
             </span>
           </button>
         </div>
       </div>
-      <div className="flex gap-16">
+      <div className="text flex flex-col gap-8 lg:flex-row lg:gap-16">
         <img src={AboutUsGraphics} alt="About Us Graphics" />
         <div className="flex flex-1 flex-col gap-4 text-[20px]">
           {tab === "identity" &&

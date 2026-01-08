@@ -36,11 +36,11 @@ export default function BrandsSection() {
 
   return (
     <section id="Brands" className="flex flex-col gap-6">
-      <div className="mx-auto flex w-7xl items-center gap-4">
-        <div className="h-12.5 w-16.5 rounded-full bg-[#234AFF]/60 outline-2 outline-offset-4 outline-white outline-dashed" />
+      <div className="mx-auto mb-4 flex w-full max-w-7xl items-center gap-4 px-8 lg:mb-12">
+        <div className="h-9 w-12 rounded-full bg-[#234AFF]/60 outline-2 outline-offset-4 outline-white outline-dashed lg:h-12.5 lg:w-16.5" />
         <div className="flex items-baseline gap-4">
-          <span className="text-6xl font-bold">Brands</span>
-          <span className="text-[15px] font-bold tracking-widest text-[#234AFF] uppercase">
+          <span className="text-[32px] font-bold lg:text-6xl">Brands</span>
+          <span className="text-[10px] font-bold tracking-widest text-[#234AFF] uppercase lg:text-[15px]">
             We Work With
           </span>
         </div>

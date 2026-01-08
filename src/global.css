@@ -9,12 +9,12 @@
 }
 
 :root {
-  @apply min-h-dvh scroll-smooth;
+  @apply h-fit min-h-dvh scroll-smooth;
 }
 
 /* Base typography and rendering */
 body {
-  @apply font-poppins m-0 overflow-x-clip bg-[#E0E0E0] antialiased;
+  @apply font-poppins m-0 max-w-dvw overflow-x-clip bg-[#E0E0E0] antialiased;
 }
 
 section {
@@ -41,6 +41,13 @@ section {
     (var(--duration) / var(--quantity)) * (var(--position) - 1) * -1
   );
 }
+.testimonials .list .item {
+  left: 100%;
+  animation: autoRun var(--duration) linear infinite;
+  animation-delay: calc(
+    (var(--duration) / var(--quantity)) * (var(--position) - 1) * -1
+  );
+}
 
 .slider_alternate .list .item {
   left: calc(100% + (var(--width) / 2));
@@ -51,14 +58,14 @@ section {
 }
 
 /* Hover interaction (kept for future enhancement) */
-/* .slider:hover .item {
+.testimonials:hover .item {
   animation-play-state: paused;
   filter: grayscale(1);
 }
 
-.slider .item:hover {
+.testimonials .item:hover {
   filter: grayscale(0);
-} */
+}
 
 /* Horizontal marquee keyframes */
 @keyframes autoRun {

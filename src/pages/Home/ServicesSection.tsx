@@ -7,13 +7,13 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="mx-auto flex flex-col items-center gap-32"
+      className="mx-auto flex flex-col items-center gap-22 p-8 lg:gap-32"
     >
-      <div className="relative w-7xl">
-        <span className="text-6xl font-bold">What We Do</span>
-        <div className="absolute -top-2.25 left-79 -z-10 h-15.5 w-20.5 rounded-[22px] bg-[#6F86F3]/60" />
+      <div className="relative w-full max-w-7xl">
+        <span className="text-[32px] font-bold lg:text-6xl">What We Do</span>
+        <div className="absolute top-0 left-42 -z-10 h-9 w-12 rounded-[22px] bg-[#6F86F3]/60 lg:-top-2.25 lg:left-79 lg:h-15.5 lg:w-20.5" />
       </div>
-      <div className="flex gap-8">
+      <div className="flex flex-col gap-24 lg:flex-row lg:gap-8">
         <ServiceCard
           label="For Brands"
           desciption="Strategic brand activations, youth marketing, and college circuit campaigns"

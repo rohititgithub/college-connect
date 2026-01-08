@@ -2,14 +2,14 @@ import TicketIcon from "../assets/ticket_icon.png";
 
 type SliderCollegeCardProps = {
   position: number;
-  image: string;
+  logoImage: string;
   name: string;
   footfall: number;
 };
 
 export default function SliderCollegeCard({
   position,
-  image,
+  logoImage,
   name,
   footfall,
 }: SliderCollegeCardProps) {
@@ -18,7 +18,11 @@ export default function SliderCollegeCard({
       style={{ "--position": position } as React.CSSProperties}
       className="item absolute flex h-20.25 w-68.25 items-center justify-between rounded-full bg-white px-4 py-3 transition-all"
     >
-      <img src={image} alt="College Logo" className="max-h-full max-w-full" />
+      <img
+        src={logoImage}
+        alt="College Logo"
+        className="max-h-full max-w-full"
+      />
       <div className="flex flex-1 flex-col items-center gap-1">
         <span className="text-center text-lg leading-none font-semibold">
           {name}

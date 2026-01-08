@@ -56,23 +56,24 @@ export default function TestimonialsSection() {
       id="testimonials"
       className="relative flex flex-col items-center gap-8"
     >
-      <div className="relative flex w-7xl flex-col gap-5">
-        <span className="text-[15px] font-bold tracking-widest text-[#144BE9] uppercase">
+      <div className="relative flex w-full max-w-7xl flex-col px-8 lg:gap-5">
+        <span className="text-[10px] font-bold tracking-widest text-[#144BE9] uppercase lg:text-[15px]">
           Our Community
         </span>
-        <span className="text-6xl font-bold">Community love us</span>
-        <div className="absolute top-8.5 left-130.75 -z-10 h-15.5 w-20.5 rounded-[22px] bg-[#144BE9]/60" />
+        <span className="text-[32px] font-bold lg:text-6xl">
+          Community love us
+        </span>
+        <div className="absolute top-4 left-77 -z-10 h-9 w-12 rounded-[22px] bg-[#6687E5]/60 lg:top-8.5 lg:left-130.75 lg:h-15.5 lg:w-20.5" />
       </div>
       <div
         style={
           {
-            "--width": "488px",
-            "--height": "330px",
+            "--width": "436px",
             "--quantity": testimonials.length,
             "--duration": "54s",
           } as React.CSSProperties
         }
-        className="slider my-6 w-full max-w-full self-start overflow-hidden"
+        className="testimonials h-55.25 w-full max-w-full self-start overflow-hidden lg:my-6 lg:h-82.5"
       >
         <div className="list relative flex min-w-[calc(var(--width)*var(--quantity))]">
           {testimonials.map((testimonial, index) => (
@@ -86,7 +87,7 @@ export default function TestimonialsSection() {
           ))}
         </div>
       </div>
-      <div className="absolute -right-32 -bottom-24 -z-10 size-88 rounded-full bg-[#234AFF]/25 blur-3xl" />
+      <div className="absolute -right-32 -bottom-24 -z-10 hidden size-88 rounded-full bg-[#234AFF]/25 blur-3xl lg:block" />
     </section>
   );
 }
