@@ -48,7 +48,7 @@ export default function BrandsSection() {
       <div
         style={
           {
-            "--width": "max(10dvh,196px)",
+            "--width": "clamp(150px,21.75dvh,180px)",
             "--quantity": logos.length,
             "--duration": "18s",
           } as React.CSSProperties
