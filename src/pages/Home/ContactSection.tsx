@@ -97,7 +97,7 @@ export default function ContactSection() {
     // Contact / lead capture section
     <section
       id="contact"
-      className="relative mx-auto my-16 flex w-[calc(100%-4rem)] max-w-7xl flex-col items-center justify-center gap-8 bg-white p-8 lg:flex-row lg:p-16"
+      className="relative mx-auto mb-8 flex w-[calc(100%-4rem)] max-w-7xl flex-col items-center justify-center gap-8 bg-white p-8 lg:flex-row lg:p-16"
     >
       {/* Backgroud gradient and Dots Graphics*/}
       <div className="absolute -top-45 -left-45 -z-10 size-100 rounded-full bg-[#144CEA]/25 blur-3xl" />

@@ -10,7 +10,7 @@ export default function VisionMissionSection() {
         <span className="text-[32px] leading-none font-bold lg:text-6xl">
           Vision and Mission
         </span>
-        <span className="text-[10px] font-bold tracking-widest text-[#234AFF] uppercase lg:text-[15px]">
+        <span className="text-[10px] font-bold tracking-widest text-[#234AFF] uppercase lg:hidden lg:text-[15px]">
           Defining our purpose and Direction
         </span>
 

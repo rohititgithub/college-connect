@@ -12,7 +12,7 @@ export default function InfoSection() {
           Why Coll-Edge Connect?
         </span>
       </div>
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-8 lg:flex-row">
         <InfoCard
           title="Experiential Marketing Expertise"
           description="Full-service execution, transforming marketing concepts into real, on-ground realities."

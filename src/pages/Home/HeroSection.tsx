@@ -32,7 +32,7 @@ export default function HeroSection() {
         src={Logo}
         alt="Coll-Edge Connect Logo"
         width={160}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 lg:hidden"
       />
     </section>
   );
