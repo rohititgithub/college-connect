@@ -130,13 +130,12 @@ export default function CollegesSection() {
       <div
         style={
           {
-            "--width": "max(18dvw, 256px)",
-            "--height": "81px",
+            "--width": "clamp(220px,25dvw,280px)",
             "--quantity": colleges[0].length,
             "--duration": "18s",
           } as React.CSSProperties
         }
-        className="slider max-w-full self-start overflow-hidden"
+        className="slider h-16 max-w-full self-start overflow-hidden lg:h-20.25"
       >
         <div className="list relative flex min-w-[calc(var(--width)*var(--quantity))]">
           {colleges[0].map((college, index) => (
@@ -152,13 +151,12 @@ export default function CollegesSection() {
       <div
         style={
           {
-            "--width": "max(18dvw, 256px)",
-            "--height": "81px",
+            "--width": "clamp(220px,25dvw,280px)",
             "--quantity": colleges[1].length,
             "--duration": "18s",
           } as React.CSSProperties
         }
-        className="slider_alternate max-w-full self-start overflow-hidden"
+        className="slider_alternate h-16 max-w-full self-start overflow-hidden lg:h-20.25"
       >
         <div className="list relative flex min-w-[calc(var(--width)*var(--quantity))]">
           {colleges[1].map((college, index) => (

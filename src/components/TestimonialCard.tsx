@@ -1,10 +1,10 @@
 import OpenQuotes from "../assets/Open_Quotes.png";
 import CloseQuotes from "../assets/Close_Quotes.png";
 
-type SliderCollegeCardProps = {
+type TestimonialProps = {
   position: number;
   author: string;
-  college: string;
+  affiliation: string;
   event?: string;
   review: string;
 };
@@ -12,14 +12,14 @@ type SliderCollegeCardProps = {
 export default function TestimonialCard({
   position,
   author,
-  college,
+  affiliation,
   event,
   review,
-}: SliderCollegeCardProps) {
+}: TestimonialProps) {
   return (
     <div
       style={{ "--position": position } as React.CSSProperties}
-      className="item absolute flex h-55.25 w-86.5 flex-col bg-white px-4 py-10 transition-all lg:h-82.5 lg:w-114.5 lg:px-12 lg:pt-20"
+      className="item absolute flex h-50 w-100 flex-col bg-white px-4 py-10 transition-all lg:h-75 lg:w-150 lg:px-12 lg:pt-20"
     >
       <img
         src={OpenQuotes}
@@ -30,7 +30,7 @@ export default function TestimonialCard({
         {author}
       </span>
       <span className="z-10 text-xs leading-tight lg:text-sm">
-        {college}
+        {affiliation}
         {event && ` - ${event}`}
       </span>
       <p className="z-10 mt-2 text-sm lg:text-[15px]">{review}</p>

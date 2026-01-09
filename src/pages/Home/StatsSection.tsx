@@ -1,6 +1,6 @@
 export default function StatsSection() {
   return (
-    <section id="stats" className="relative mt-4 px-8 lg:mt-16 lg:h-35">
+    <section id="stats" className="relative px-8 lg:mt-16 lg:h-35">
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-2 rounded-2xl bg-white p-4 lg:h-35 lg:flex-row">
         <div className="flex w-full items-center">
           <div className="flex flex-1 flex-col items-center gap-2 lg:w-69.5">

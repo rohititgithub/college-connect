@@ -1,5 +1,4 @@
 import LogoIcon from "../../assets/Coll-Edge_Connect_Icon_Light.svg";
-import Logo from "../../assets/Coll-Edge_Connect_Logo_Light.svg";
 
 export default function HeroSection() {
   return (
@@ -9,7 +8,7 @@ export default function HeroSection() {
     >
       <div className="flex w-full max-w-3xl flex-col gap-6">
         <span className="text-[40px] leading-none font-semibold lg:text-[100px]">
-          Where Brands Meets The Campus Buzz!!
+          Where Brands Meet The Campus Buzz!!
         </span>
         <p className="text-sm lg:pr-5 lg:text-[26px]">
           <span className="font-semibold text-[#234AFF]">
@@ -26,13 +25,6 @@ export default function HeroSection() {
         alt="Coll-Edge Connect Logo"
         width={360}
         className="absolute top-[calc(50%-3.25rem)] -right-64 hidden lg:block"
-      />
-      <div className="mx-auto mt-16 h-37.5 w-75 items-center rounded-t-full bg-[#4673EB] shadow-[0px_0px_120px_32px_rgba(70,115,235,0.34)] blur-[2px] lg:hidden" />
-      <img
-        src={Logo}
-        alt="Coll-Edge Connect Logo"
-        width={160}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 lg:hidden"
       />
     </section>
   );

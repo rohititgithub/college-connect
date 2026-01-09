@@ -7,13 +7,14 @@ export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
 
   function goTo(id: string) {
+    setIsNavOpen((prev) => (prev === true ? false : true));
     setTimeout(() => {
       document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     }, 0);
   }
 
   return (
-    <header className="relative z-50 flex w-full max-w-7xl items-center gap-11.5 px-8 py-10 lg:mx-auto">
+    <header className="z-50 flex w-full max-w-7xl items-center gap-11.5 px-8 py-10 lg:mx-auto">
       <img
         src={Logo}
         alt="Coll-Edge_Connect_Logo"
@@ -62,7 +63,7 @@ export default function Header() {
         <Menu size={24} />
       </button>
       <nav
-        className={`${isNavOpen ? "right-0" : "-right-[75%]"} absolute top-0 flex h-dvh w-[75%] flex-col items-end gap-8 border-l-2 bg-[#E0E0E0] px-8 py-10 text-4xl transition-all duration-400 lg:hidden`}
+        className={`${isNavOpen ? "right-0" : "-right-[75%]"} fixed top-0 z-50 flex h-dvh w-[75%] flex-col items-end gap-8 border-l-2 bg-[#E0E0E0] px-8 py-10 text-4xl transition-all duration-400 lg:hidden`}
       >
         <div className="flex w-full justify-between gap-4">
           <img

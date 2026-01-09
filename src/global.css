@@ -25,23 +25,8 @@ section {
   scroll-margin-top: 120px;
 }
 
-.slider {
-  height: var(--height);
-}
-
-.slider_alternate {
-  height: var(--height);
-}
-
 /* Continuous auto-scroll animation for brand items */
 .slider .list .item {
-  left: 100%;
-  animation: autoRun var(--duration) linear infinite;
-  animation-delay: calc(
-    (var(--duration) / var(--quantity)) * (var(--position) - 1) * -1
-  );
-}
-.testimonials .list .item {
   left: 100%;
   animation: autoRun var(--duration) linear infinite;
   animation-delay: calc(
@@ -70,7 +55,7 @@ section {
 /* Horizontal marquee keyframes */
 @keyframes autoRun {
   from {
-    left: 100%;
+    left: calc(100% + var(--width));
   }
   to {
     left: calc(var(--width) * -1.5);
@@ -81,6 +66,6 @@ section {
     left: calc(100% + (var(--width) / 2));
   }
   to {
-    left: calc(var(--width) * -1);
+    left: calc(var(--width) * -2);
   }
 }
