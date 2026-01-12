@@ -60,44 +60,40 @@ export default function TestimonialsSection() {
 
   const brandTestimonials: brandTestimonial[] = [
     {
-      author: "Krish",
-      brand: "BITS Pilani",
-      event: "Oasis",
+      author: "Marketing Head",
+      brand: "Denver",
       review:
-        "From connecting us with relevant brands to smooth coordination till the event day, their team handled everything professionally. The sponsorship support helped us scale our event smoothly and successfully.",
+        "Flawless execution across cities—aligned perfectly with our company marketing ideas.",
     },
     {
-      author: "Rohit",
-      brand: "IIT Kanpur",
-      event: "Antaragini",
+      author: "North Zone Head",
+      brand: "Pizza Hut",
       review:
-        "colledge connect bridges the gap between colleges and brands perfectly. The process was transparent, quick, and completely stress-free for student organizers.",
+        "Amazing brand management by the team over events, as a brand we were not worried for the activation at all and were more focused towards the other parts",
     },
     {
-      author: "Tanvi",
-      brand: "Jaipuriya",
+      author: "Regional Branch Manager",
+      brand: "Monster",
       review:
-        "We collaborated with colledge connect for our cultural fest, and the experience was excellent. They helped us secure relevant brand collaborations and supported us throughout the entire event process.",
+        "Coll-Edge Connect helped us in easy collaboration and activation in the events.",
     },
     {
-      author: "Dhanvi",
-      brand: "COEP",
-      event: "Impressions",
+      author: "CEO",
+      brand: "BLND",
       review:
-        "colledge connect connected us with brands that aligned well with our audience. Clear communication and smooth execution made the whole sponsorship process easy.",
+        "Seamless execution and authentic campus engagement made our collaboration with Coll-Edge Connect truly impactful for BLND. A team that understands youth marketing at its core.",
     },
     {
-      author: "Hardik",
-      brand: "IIT Bombay",
-      event: "Mood Indigo",
+      author: "Brand Rep",
+      brand: "Nykaa",
       review:
-        "Finding sponsors is usually challenging, but colledge connect made it simple and efficient. Their strong brand network helped elevate our event quality and reach.",
+        "Coll-Edge Connect helped us as a last moment saviour in closing some crucial deals which none of the other agency was able to. Truly a life saver!",
     },
     {
-      author: "Vedika",
-      brand: "Lady Irwin College",
+      author: "Brand Marketing Manager",
+      brand: "PhysicsWallah",
       review:
-        "The team at colledge connect guided us end-to-end and ensured everything ran smoothly. We received both financial support and meaningful brand collaborations.",
+        "Got the best deals with college and truly justified work, the team worked with college students to get the best output for the brand and also helped us to reach right audience.",
     },
   ];
 
