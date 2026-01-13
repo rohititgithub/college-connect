@@ -9,12 +9,12 @@
 }
 
 :root {
-  @apply h-fit min-h-dvh scroll-smooth;
+  @apply h-fit min-h-dvh max-w-dvw overflow-x-clip scroll-smooth;
 }
 
 /* Base typography and rendering */
 body {
-  @apply font-poppins m-0 max-w-dvw overflow-x-clip bg-[#E0E0E0] antialiased;
+  @apply font-poppins m-0 bg-[#E0E0E0] antialiased;
 }
 
 section {
