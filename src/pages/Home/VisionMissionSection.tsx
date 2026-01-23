@@ -4,7 +4,7 @@ export default function VisionMissionSection() {
   return (
     <section
       id="vision-mission"
-      className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-8 lg:my-24 lg:gap-16"
+      className="mx-auto my-4 flex w-full max-w-7xl flex-col gap-8 px-8 lg:my-24 lg:gap-16"
     >
       <div className="relative flex flex-col">
         <span className="text-[32px] leading-none font-bold lg:text-6xl">

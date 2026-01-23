@@ -18,7 +18,7 @@ export default function HeroSection() {
           support, and youth-focused campaigns.
         </p>
       </div>
-      <div className="absolute top-8 -left-64 -z-10 flex size-169.25 items-center rounded-full bg-[#9DBEE2]/50 blur-3xl" />
+      <div className="absolute top-8 -left-64 -z-10 hidden size-169.25 items-center rounded-full bg-[#9DBEE2]/50 blur-3xl lg:block" />
       <div className="absolute top-18 -right-120 -z-10 hidden size-169.25 items-center rounded-full bg-[#4673EB] shadow-[0px_0px_120px_32px_rgba(70,115,235,0.34)] blur-[2px] lg:block" />
       <img
         src={LogoIcon}
