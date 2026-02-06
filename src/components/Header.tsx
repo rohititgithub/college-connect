@@ -1,3 +1,4 @@
+"use client"
 import { Menu, X } from "lucide-react";
 import Logo from "@/assets/Coll-Edge_Connect_Logo.svg";
 import LogoIcon from "@/assets/Coll-Edge_Connect_Icon_Light.svg";

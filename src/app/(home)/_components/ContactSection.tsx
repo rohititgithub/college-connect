@@ -1,3 +1,4 @@
+"use client"
 import { useState } from "react";
 import ContactGraphics from "@/assets/Contact_Graphics.png";
 import { Send } from "lucide-react";
