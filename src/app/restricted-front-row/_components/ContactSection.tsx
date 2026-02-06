@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Copy, Send } from "lucide-react";
 import Dots from "@/assets/Dots.png";
 import { validateSignupForm } from "@/lib/signupForm.Validation";
@@ -20,14 +20,10 @@ export default function ContactSection() {
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const [memberId, setMemberId] = useState<string | null>(null);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(() => {
+  const [memberId, setMemberId] = useState<string | null>(() => {
     const existing = getSignupFromCookie();
-    if (existing?.memberId) {
-      setMemberId(existing.memberId);
-    }
-  }, []);
+    return existing?.memberId ?? null;
+  });
 
   const isFormFilled = Object.values(formData).every(
     (value) => value.trim() !== "",
@@ -308,7 +304,7 @@ export default function ContactSection() {
             </div>
 
             <Link
-              href={"https://discord.gg/x29jjf2y4K"}
+              href={"https://discord.gg/KPEjTbF4VA"}
               className="flex w-fit cursor-pointer items-center gap-2 rounded-[3px] bg-[#144BE9] p-3 text-white transition-all hover:-translate-y-0.5 hover:shadow-[0px_2px_0px_0px_rgba(0,0,0,0.25)] active:translate-0 active:shadow-none disabled:translate-0 disabled:cursor-not-allowed disabled:opacity-75 disabled:shadow-none"
               type="button"
             >
