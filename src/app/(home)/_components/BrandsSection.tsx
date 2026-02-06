@@ -1,19 +1,19 @@
-import BrandLogoCard from "../../components/BrandLogoCard";
-import DenverLogo from "../../assets/Denver_Horizontal_Logo.png";
-import NykaaLogo from "../../assets/Nykaa_New_Logo.svg";
-import MonsterLogo from "../../assets/Logo_Monster_Energy.webp";
-import AxeLogo from "../../assets/Axe_logo_2016.svg";
-import PizzaHutLogo from "../../assets/Pizza_Hut_international_logo_2014.svg";
-import TacoBellLogo from "../../assets/Taco_Bell_2023.svg";
-import HellLogo from "../../assets/HELL_ENERGY_logo.png";
-import PWLogo from "../../assets/Physics_wallah_logo.jpg";
-import ResponsibleWhatrLogo from "../../assets/responsible_whatr_logo.jpg";
-import WoodsmenLogo from "../../assets/woodsmen-logo-dark.png";
-import WoodNoteLogo from "../../assets/woodnote.webp";
-import ManforceLogo from "../../assets/Manforce_Logo.png";
-import SuperSmellyLogo from "../../assets/Super_Smelly_Logo.jpg";
-import RedBullLogo from "../../assets/RedBullEnergyDrink.svg";
-import SimbaBeerLogo from "../../assets/Simba_Beer_Logo.png";
+import DenverLogo from "@/assets/Denver_Horizontal_Logo.png";
+import NykaaLogo from "@/assets/Nykaa_New_Logo.svg";
+import MonsterLogo from "@/assets/Logo_Monster_Energy.webp";
+import AxeLogo from "@/assets/Axe_logo_2016.svg";
+import PizzaHutLogo from "@/assets/Pizza_Hut_international_logo_2014.svg";
+import TacoBellLogo from "@/assets/Taco_Bell_2023.svg";
+import HellLogo from "@/assets/HELL_ENERGY_logo.png";
+import PWLogo from "@/assets/Physics_wallah_logo.jpg";
+import ResponsibleWhatrLogo from "@/assets/responsible_whatr_logo.jpg";
+import WoodsmenLogo from "@/assets/woodsmen-logo-dark.png";
+import WoodNoteLogo from "@/assets/woodnote.webp";
+import ManforceLogo from "@/assets/Manforce_Logo.png";
+import SuperSmellyLogo from "@/assets/Super_Smelly_Logo.jpg";
+import RedBullLogo from "@/assets/RedBullEnergyDrink.svg";
+import SimbaBeerLogo from "@/assets/Simba_Beer_Logo.png";
+import BrandLogoCard from "@/components/BrandLogoCard";
 
 export default function BrandsSection() {
   const logos = [
@@ -57,7 +57,7 @@ export default function BrandsSection() {
       >
         <div className="list relative flex min-w-[calc(var(--width)*var(--quantity))]">
           {logos.map((logo, index) => (
-            <BrandLogoCard position={index + 1} image={logo} />
+            <BrandLogoCard key={index} position={index + 1} image={logo} />
           ))}
         </div>
       </div>

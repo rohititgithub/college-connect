@@ -7,8 +7,9 @@ import {
   Phone,
   Youtube,
 } from "lucide-react";
-import Logo from "../assets/Coll-Edge_Connect_Logo.svg";
-import { Link } from "react-router";
+import Logo from "@/assets/Coll-Edge_Connect_Logo.svg";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   function goTo(id: string) {
@@ -23,40 +24,40 @@ export default function Footer() {
       <div className="flex w-full max-w-7xl flex-col gap-8 lg:flex-row">
         {/* Brand summary & social links */}
         <div className="flex w-75 flex-col gap-4">
-          <img
+          <Image
             src={Logo}
             alt="Coll-Edge Connect Logo"
             width={173}
             className="self-start"
           />
           <span className="hidden lg:block">
-            India's fastest bridge between Colleges & Brands. Sponsorships,
+            India&apos;s fastest bridge between Colleges & Brands. Sponsorships,
             activations and engagement simplified
           </span>
           <div className="hidden gap-4 lg:flex">
             <Link
-              to={""}
+              href={""}
               target="_blank"
               className="rounded-full bg-[#F3F4F6] p-2.5 transition-all hover:opacity-75 active:opacity-50"
             >
               <Facebook size={20} />
             </Link>
             <Link
-              to={"https://www.linkedin.com/company/coll-edge-connect/"}
+              href={"https://www.linkedin.com/company/coll-edge-connect/"}
               target="_blank"
               className="rounded-full bg-[#F3F4F6] p-2.5 transition-all hover:opacity-75 active:opacity-50"
             >
               <Linkedin size={20} />
             </Link>
             <Link
-              to={""}
+              href={""}
               target="_blank"
               className="rounded-full bg-[#F3F4F6] p-2.5 transition-all hover:opacity-75 active:opacity-50"
             >
               <Youtube size={20} />
             </Link>
             <Link
-              to={"https://www.instagram.com/colledge_connect/"}
+              href={"https://www.instagram.com/colledge_connect/"}
               target="_blank"
               className="rounded-full bg-[#F3F4F6] p-2.5 transition-all hover:opacity-75 active:opacity-50"
             >
@@ -107,17 +108,17 @@ export default function Footer() {
           </div>
           <div className="flex gap-2">
             <Mail size={24} className="min-w-6 text-[#155DFC]" />
-            <Link to={"mailto:info@colledgeconnect.in"}>
+            <Link href={"mailto:info@colledgeconnect.in"}>
               <span>info@colledgeconnect.in</span>
             </Link>
           </div>
           <div className="flex gap-2">
             <Phone size={24} className="min-w-6 text-[#155DFC]" />
             <div className="flex gap-2">
-              <Link to={"tel:+91-7042336388"}>
+              <Link href={"tel:+91-7042336388"}>
                 <span>+91 7042336388,</span>
               </Link>
-              <Link to={"tel:+91-9711692922"}>
+              <Link href={"tel:+91-9711692922"}>
                 <span>+91 9711692922</span>
               </Link>
             </div>

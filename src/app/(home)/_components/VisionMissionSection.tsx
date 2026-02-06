@@ -1,4 +1,5 @@
-import Dots from "../../assets/Dots.png";
+import Image from "next/image";
+import Dots from "@/assets/Dots.png";
 
 export default function VisionMissionSection() {
   return (
@@ -27,7 +28,7 @@ export default function VisionMissionSection() {
             <span>And </span>
             <span className="text-[#4673EB]">Direction</span>
           </div>
-          <img
+          <Image
             src={Dots}
             alt="Dots"
             className="absolute top-18 right-24 w-23.5"

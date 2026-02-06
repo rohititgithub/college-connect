@@ -1,7 +1,8 @@
 import { Menu, X } from "lucide-react";
-import Logo from "../assets/Coll-Edge_Connect_Logo.svg";
-import LogoIcon from "../assets/Coll-Edge_Connect_Icon_Light.svg";
+import Logo from "@/assets/Coll-Edge_Connect_Logo.svg";
+import LogoIcon from "@/assets/Coll-Edge_Connect_Icon_Light.svg";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -15,7 +16,7 @@ export default function Header() {
 
   return (
     <header className="z-50 flex w-full max-w-7xl items-center gap-11.5 px-8 py-10 lg:mx-auto">
-      <img
+      <Image
         src={Logo}
         alt="Coll-Edge_Connect_Logo"
         className="mr-auto w-24 lg:w-51.75"
@@ -66,7 +67,7 @@ export default function Header() {
         className={`${isNavOpen ? "right-0" : "-right-[75%]"} fixed top-0 z-50 flex h-dvh w-[75%] flex-col items-end gap-8 border-l-2 bg-[#E0E0E0] px-8 py-10 text-4xl transition-all duration-400 lg:hidden`}
       >
         <div className="flex w-full justify-between gap-4">
-          <img
+          <Image
             src={LogoIcon}
             alt="Coll-Edge_Connect_Logo Icon"
             className="h-7.25 lg:w-51.75"

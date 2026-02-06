@@ -1,4 +1,5 @@
-import InfoIcon from "../assets/Info_Icon.png";
+import Image from "next/image";
+import InfoIcon from "@/assets/Info_Icon.png";
 
 type InfoCardProps = {
   title: string;
@@ -8,7 +9,7 @@ type InfoCardProps = {
 export default function InfoCard({ title, description }: InfoCardProps) {
   return (
     <div className="flex w-full max-w-102.5 flex-col gap-0.5 rounded-2xl bg-white p-6 lg:h-78 lg:gap-2 lg:p-10">
-      <img
+      <Image
         src={InfoIcon}
         alt="Info Card Icon"
         className="size-8 lg:size-16.25"

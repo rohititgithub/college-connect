@@ -1,7 +1,7 @@
-import ServiceCard from "../../components/ServiceCard";
-import ForBrandsIcon from "../../assets/For_Brands_Service_Icon.png";
-import ForCollegesIcon from "../../assets/For_Colleges_Service_Icon.png";
-import ArtistsCreatorsIcon from "../../assets/Artists_&_Creators_Service_Icon.png";
+import ServiceCard from "@/components/ServiceCard";
+import ForBrandsIcon from "@/assets/For_Brands_Service_Icon.png";
+import ForCollegesIcon from "@/assets/For_Colleges_Service_Icon.png";
+import ArtistsCreatorsIcon from "@/assets/Artists_&_Creators_Service_Icon.png";
 
 export default function ServicesSection() {
   return (

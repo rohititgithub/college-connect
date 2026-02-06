@@ -1,5 +1,6 @@
-import OpenQuotes from "../assets/Open_Quotes.png";
-import CloseQuotes from "../assets/Close_Quotes.png";
+import OpenQuotes from "@/assets/Open_Quotes.png";
+import CloseQuotes from "@/assets/Close_Quotes.png";
+import Image from "next/image";
 
 type TestimonialProps = {
   position: number;
@@ -21,7 +22,7 @@ export default function TestimonialCard({
       style={{ "--position": position } as React.CSSProperties}
       className="item absolute flex h-50 w-100 flex-col bg-white px-4 py-10 transition-all lg:h-75 lg:w-150 lg:px-12 lg:pt-20"
     >
-      <img
+      <Image
         src={OpenQuotes}
         alt="Open Quotes"
         className="absolute top-0 left-0 aspect-4/3 w-10 lg:w-16"
@@ -34,7 +35,7 @@ export default function TestimonialCard({
         {event && ` - ${event}`}
       </span>
       <p className="z-10 mt-2 text-sm lg:text-[15px]">{review}</p>
-      <img
+      <Image
         src={CloseQuotes}
         alt="Close Quotes"
         className="absolute right-0 bottom-0 aspect-4/3 w-10 lg:w-16"

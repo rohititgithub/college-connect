@@ -1,4 +1,4 @@
-import TestimonialCard from "../../components/TestimonialCard";
+import TestimonialCard from "@/components/TestimonialCard";
 
 type collegeTestimonial = {
   author: string;
@@ -124,6 +124,7 @@ export default function TestimonialsSection() {
         <div className="list relative flex min-w-[calc(var(--width)*var(--quantity))]">
           {collegeTestimonials.map((testimonial, index) => (
             <TestimonialCard
+              key={index}
               position={index + 1}
               author={testimonial.author}
               affiliation={testimonial.college}
@@ -146,6 +147,7 @@ export default function TestimonialsSection() {
         <div className="list relative flex min-w-[calc(var(--width)*var(--quantity))]">
           {brandTestimonials.map((testimonial, index) => (
             <TestimonialCard
+              key={index}
               position={index + 1}
               author={testimonial.author}
               affiliation={testimonial.brand}

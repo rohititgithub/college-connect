@@ -1,9 +1,10 @@
 import { useState } from "react";
-import ContactGraphics from "../../assets/Contact_Graphics.png";
-import { validateContactForm } from "../../validation/contactForm.validation";
+import ContactGraphics from "@/assets/Contact_Graphics.png";
 import { Send } from "lucide-react";
-import Dots from "../../assets/Dots.png";
-import { sendToDiscord } from "../../api/discordWebhook";
+import Dots from "@/assets/Dots.png";
+import { validateContactForm } from "@/lib/contactForm.validation";
+import { sendToDiscord } from "@/lib/discordWebhook";
+import Image from "next/image";
 
 export default function ContactSection() {
   // Form state management
@@ -101,7 +102,7 @@ export default function ContactSection() {
     >
       {/* Backgroud gradient and Dots Graphics*/}
       <div className="absolute -top-45 -left-45 -z-10 size-100 rounded-full bg-[#144CEA]/25 blur-3xl" />
-      <img
+      <Image
         src={Dots}
         alt="Dots Graphics"
         className="absolute -top-15 -left-10 w-32 lg:w-42.25"
@@ -110,12 +111,12 @@ export default function ContactSection() {
       {/* Visual illustration & Heading*/}
       <div className="flex flex-1 flex-col items-center">
         <span className="w-full max-w-sm text-center text-[22px] font-bold text-[#144BE9] uppercase">
-          Let's build
+          Let&apos;s build
         </span>
         <span className="w-full max-w-sm text-center text-[22px] font-bold text-[#144BE9] uppercase">
           the next big campus story
         </span>
-        <img
+        <Image
           src={ContactGraphics}
           alt="Contact Section Graphics"
           width={247}

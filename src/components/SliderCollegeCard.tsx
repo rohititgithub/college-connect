@@ -1,4 +1,5 @@
-import TicketIcon from "../assets/ticket_icon.png";
+import TicketIcon from "@/assets/ticket_icon.png";
+import Image from "next/image";
 
 type SliderCollegeCardProps = {
   position: number;
@@ -19,7 +20,7 @@ export default function SliderCollegeCard({
       className="item absolute flex h-16 w-56 items-center justify-between overflow-hidden rounded-full bg-white px-4 py-1.5 transition-all lg:h-20.25 lg:w-68.25 lg:py-3"
     >
       <div className="relative flex size-10 items-center justify-center lg:size-16">
-        <img
+        <Image
           src={logoImage}
           alt="College Logo"
           className="max-h-full max-w-full"
@@ -30,7 +31,7 @@ export default function SliderCollegeCard({
           {name}
         </span>
         <div className="flex items-center gap-2">
-          <img
+          <Image
             src={TicketIcon}
             alt="Ticket Icon"
             className="max-h-[13.5px] w-3.75 object-contain"

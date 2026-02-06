@@ -1,5 +1,6 @@
 import { useState } from "react";
-import AboutUsGraphics from "../../assets/About_Us_Graphics.png";
+import AboutUsGraphics from "@/assets/About_Us_Graphics.png";
+import Image from "next/image";
 
 export default function AboutSection() {
   const [tab, setTab] = useState<"identity" | "work">("work");
@@ -57,11 +58,12 @@ export default function AboutSection() {
         </div>
       </div>
       <div className="text flex flex-col gap-8 lg:flex-row lg:gap-16">
-        <img src={AboutUsGraphics} alt="About Us Graphics" />
+        <Image src={AboutUsGraphics} alt="About Us Graphics" />
         <div className="flex flex-1 flex-col gap-4 text-[20px]">
           {tab === "identity" &&
-            tabContent.identity.map((para) => <p>{para}</p>)}
-          {tab === "work" && tabContent.work.map((para) => <p>{para}</p>)}
+            tabContent.identity.map((para, index) => <p key={index}>{para}</p>)}
+          {tab === "work" &&
+            tabContent.work.map((para, index) => <p key={index}>{para}</p>)}
         </div>
       </div>
 

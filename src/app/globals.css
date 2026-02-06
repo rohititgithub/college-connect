@@ -1,20 +1,26 @@
 @import "tailwindcss";
 
-@theme {
-  --font-poppins: "Poppins", sans-serif;
-}
-
-* {
-  @apply box-border;
-}
-
 :root {
-  @apply h-fit min-h-dvh max-w-dvw overflow-x-clip scroll-smooth;
+  @apply min-h-dvh max-w-dvw overflow-x-clip scroll-smooth;
+  --background: #e0e0e0;
+  --foreground: #000000;
 }
 
-/* Base typography and rendering */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-poppins);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
 body {
-  @apply font-poppins m-0 bg-[#E0E0E0] antialiased;
+  @apply bg-background text-foreground font-sans;
 }
 
 section {
@@ -25,7 +31,6 @@ section {
   scroll-margin-top: 120px;
 }
 
-/* Continuous auto-scroll animation for brand items */
 .slider .list .item {
   left: 100%;
   animation: autoRun var(--duration) linear infinite;
@@ -42,7 +47,6 @@ section {
   );
 }
 
-/* Hover interaction (kept for future enhancement) */
 .testimonials:hover .item {
   animation-play-state: paused;
   filter: grayscale(1);

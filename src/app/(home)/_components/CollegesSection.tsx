@@ -1,22 +1,22 @@
-import SliderCollegeCard from "../../components/SliderCollegeCard";
-import IITKanpurLogo from "../../assets/IIT_Kanpur_Logo.svg";
-import IITGuwahatiLogo from "../../assets/IIT_Guwahati_Logo.svg";
-import BITSPilaniLogo from "../../assets/BITS_Pilani-Logo.svg";
-import HansrajCollegeLogo from "../../assets/Hansraj_College_Logo.jpg";
-import HinduCollegeLogo from "../../assets/Hindu_College,_Delhi_shield.svg";
-import LadyIrwinCollegeLogo from "../../assets/Lady_Irwin_College_Logo.png";
-import RuiaCollegeLogo from "../../assets/Ruia_College_Logo.png";
-import IITBombayLogo from "../../assets/Indian_Institute_of_Technology_Bombay_Logo.svg";
-import SIBMLogo from "../../assets/Logo_of_Symbiosis_International_University.svg";
-import NIITNeemranaLogo from "../../assets/NIIT_Neemrana_Logo.jpeg";
-import COEPLogo from "../../assets/College_of_Engineering,_Pune_logo.jpg";
-import IITMadrasLogo from "../../assets/IIT_Madras_Logo.svg";
-import LPULogo from "../../assets/Lovely_Professional_University_logo.png";
-import NMIMSNaviMumbaiLogo from "../../assets/Narsee_Monjee_Institute_of_Management_Studies_Logo.png";
-import BPITCollegeLogo from "../../assets/BPIT-logo.jpg";
-import IITPalakkadLogo from "../../assets/IIT_Palakkad_Logo.svg";
-import SriVenkateswaraCollegeLogo from "../../assets/Sri_Venkateswara_College_Logo.png";
-import IITPatnaLogo from "../../assets/Indian_Institute_of_Technology,_Patna.svg";
+import SliderCollegeCard from "@/components/SliderCollegeCard";
+import IITKanpurLogo from "@/assets/IIT_Kanpur_Logo.svg";
+import IITGuwahatiLogo from "@/assets/IIT_Guwahati_Logo.svg";
+import BITSPilaniLogo from "@/assets/BITS_Pilani-Logo.svg";
+import HansrajCollegeLogo from "@/assets/Hansraj_College_Logo.jpg";
+import HinduCollegeLogo from "@/assets/Hindu_College,_Delhi_shield.svg";
+import LadyIrwinCollegeLogo from "@/assets/Lady_Irwin_College_Logo.png";
+import RuiaCollegeLogo from "@/assets/Ruia_College_Logo.png";
+import IITBombayLogo from "@/assets/Indian_Institute_of_Technology_Bombay_Logo.svg";
+import SIBMLogo from "@/assets/Logo_of_Symbiosis_International_University.svg";
+import NIITNeemranaLogo from "@/assets/NIIT_Neemrana_Logo.jpeg";
+import COEPLogo from "@/assets/College_of_Engineering,_Pune_logo.jpg";
+import IITMadrasLogo from "@/assets/IIT_Madras_Logo.svg";
+import LPULogo from "@/assets/Lovely_Professional_University_logo.png";
+import NMIMSNaviMumbaiLogo from "@/assets/Narsee_Monjee_Institute_of_Management_Studies_Logo.png";
+import BPITCollegeLogo from "@/assets/BPIT-logo.jpg";
+import IITPalakkadLogo from "@/assets/IIT_Palakkad_Logo.svg";
+import SriVenkateswaraCollegeLogo from "@/assets/Sri_Venkateswara_College_Logo.png";
+import IITPatnaLogo from "@/assets/Indian_Institute_of_Technology,_Patna.svg";
 
 export default function CollegesSection() {
   const colleges = [
@@ -140,6 +140,7 @@ export default function CollegesSection() {
         <div className="list relative flex min-w-[calc(var(--width)*var(--quantity))]">
           {colleges[0].map((college, index) => (
             <SliderCollegeCard
+              key={index}
               position={index + 1}
               name={college.name}
               logoImage={college.logo}
@@ -161,6 +162,7 @@ export default function CollegesSection() {
         <div className="list relative flex min-w-[calc(var(--width)*var(--quantity))]">
           {colleges[1].map((college, index) => (
             <SliderCollegeCard
+              key={index}
               position={index + 1}
               name={college.name}
               logoImage={college.logo}
