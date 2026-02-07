@@ -23,7 +23,7 @@ const CTASection = () => {
           <span>Free PRO access for first 1,000 members worth ₹199</span>
         </div>
 
-        <h1 className="mb-6 text-7xl font-black">
+        <h1 className="mb-6 text-4xl font-black lg:text-7xl">
           NOT EVERYONE <br />
           GETS THE FRONT ROW.
         </h1>
@@ -35,15 +35,11 @@ const CTASection = () => {
 
         <Link
           href="restricted-front-row/form"
-          className="group relative w-full max-w-sm rounded-xl 
-          bg-linear-to-r from-[#1ca6eb] from-0% via-[#3007d6] via-40% to-[#ff1b6b] to-100% 
-          py-4 text-xl font-bold tracking-wider text-white uppercase transition-all hover:scale-[1.02] active:scale-[1]"
+          className="group relative w-full max-w-sm rounded-xl bg-linear-to-r from-[#1ca6eb] from-0% via-[#3007d6] via-40% to-[#ff1b6b] to-100% py-4 text-xl font-bold tracking-wider text-white uppercase transition-all hover:scale-[1.02] active:scale-[1]"
         >
           <span
             aria-hidden
-            className="absolute inset-0 -z-10 translate-y-2 rounded-xl 
-            bg-linear-to-r from-[#1ca6eb] from-0% via-[#3007d6] via-40% to-[#ff1b6b] to-100% opacity-70 
-            blur-xl transition-all group-hover:opacity-90 group-hover:blur-2xl"
+            className="absolute inset-0 -z-10 translate-y-2 rounded-xl bg-linear-to-r from-[#1ca6eb] from-0% via-[#3007d6] via-40% to-[#ff1b6b] to-100% opacity-70 blur-xl transition-all group-hover:opacity-90 group-hover:blur-2xl"
           />
 
           <span className="absolute inset-0 rounded-xl ring-1 ring-white/20 group-hover:ring-white/30" />
