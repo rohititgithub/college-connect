@@ -10,6 +10,8 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-poppins);
+    --font-pjs: var(--font-plus-jakarta-sans);
+
 }
 
 

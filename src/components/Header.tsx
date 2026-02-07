@@ -4,6 +4,7 @@ import Logo from "@/assets/Coll-Edge_Connect_Logo.svg";
 import LogoIcon from "@/assets/Coll-Edge_Connect_Icon_Light.svg";
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -16,20 +17,19 @@ export default function Header() {
   }
 
   return (
-    <header className="z-50 flex w-full max-w-7xl items-center gap-11.5 px-8 py-10 lg:mx-auto">
+    <header className="z-50 flex w-full max-w-7xl items-center gap-11.5 px-8 py-4 lg:mx-auto">
       <Image
         src={Logo}
         alt="Coll-Edge_Connect_Logo"
         className="mr-auto w-24 lg:w-51.75"
       />
       <nav className="hidden gap-13.5 text-[17px] font-semibold text-[#382F68] lg:flex">
-        <button
-          type="button"
-          onClick={() => goTo("home")}
+        <Link
+          href={"/"}
           className="cursor-pointer underline decoration-transparent underline-offset-2 transition-all hover:decoration-[#382F68] active:text-[#234AFF] active:decoration-[#234AFF]"
         >
           <span>Home</span>
-        </button>
+        </Link>
         <button
           type="button"
           onClick={() => goTo("services")}
