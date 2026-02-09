@@ -52,32 +52,40 @@ export default function ContactSection() {
   }
 
   async function handleSubmit() {
-    const validationErrors = validateSignupForm(formData);
+  const validationErrors = validateSignupForm(formData);
 
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-      setTouched({
-        name: true,
-        email: true,
-        contact: true,
-        college: true,
-        city: true,
-      });
-      return;
-    }
-
-    try {
-      const savedSignup = saveSignupToCookie(formData);
-      await fetch("/api/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(savedSignup),
-      });
-      router.push("/restricted-front-row/success");
-    } catch (error) {
-      console.error("Signup failed:", error);
-    }
+  if (Object.keys(validationErrors).length > 0) {
+    setErrors(validationErrors);
+    setTouched({
+      name: true,
+      email: true,
+      contact: true,
+      college: true,
+      city: true,
+    });
+    return;
   }
+
+  try {
+    const res = await fetch("/api/signup", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await res.json();
+
+    saveSignupToCookie({
+      ...formData,
+      memberId: data.memberId,
+    });
+
+    router.push("/restricted-front-row/success");
+  } catch (error) {
+    console.error("Signup failed:", error);
+  }
+}
+
 
   return (
     <section

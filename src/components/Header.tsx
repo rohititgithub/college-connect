@@ -81,13 +81,12 @@ export default function Header() {
             <X size={24} />
           </button>
         </div>
-        <button
-          type="button"
-          onClick={() => goTo("home")}
+        <Link
+        href={"/"}
           className="cursor-pointer underline decoration-transparent underline-offset-2 transition-all hover:decoration-[#382F68] active:text-[#234AFF] active:decoration-[#234AFF]"
         >
           <span>Home</span>
-        </button>
+        </Link>
         <button
           type="button"
           onClick={() => goTo("services")}
