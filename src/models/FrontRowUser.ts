@@ -13,17 +13,14 @@ const FrontRowUserSchema = new mongoose.Schema(
 
     source: {
       type: String,
-      enum: ["signup", "sheet"],
-      default:"signup",
+      enum: ["signup", "sheet", "cookie"],
+      default: "signup",
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
-FrontRowUserSchema.index(
-  { email: 1, contact: 1 },
-  { unique: true }
-);
+FrontRowUserSchema.index({ email: 1, contact: 1 }, { unique: true });
 
 export default mongoose.models.FrontRowUser ||
   mongoose.model("FrontRowUser", FrontRowUserSchema);

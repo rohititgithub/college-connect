@@ -2,43 +2,73 @@
 
 import { useEffect, useState } from "react";
 import { Copy, CheckCircle2 } from "lucide-react";
-import { getSignupFromCookie } from "@/lib/signupCookie";
+import { getSignupFromCookie, saveSignupToCookie } from "@/lib/signupCookie";
 import Link from "next/link";
 import Image from "next/image";
 import bgImage from "@/assets/bg.jpg";
 
 export default function SuccessPage() {
   const [memberId, setMemberId] = useState<string | null>(null);
-  const [hasHydrated, setHasHydrated] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    queueMicrotask(() => {
-      setHasHydrated(true);
-    });
+    let cancelled = false;
+
+    const run = async () => {
+      await Promise.resolve();
+
+      const cookie = getSignupFromCookie();
+      if (!cookie || cancelled) {
+        setReady(true);
+        return;
+      }
+
+      setMemberId(cookie.memberId);
+      setReady(true);
+
+      try {
+        const res = await fetch("/api/auth/sync", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(cookie),
+        });
+
+        const data = await res.json();
+
+        if (
+          !cancelled &&
+          data?.memberId &&
+          data.memberId !== cookie.memberId
+        ) {
+          saveSignupToCookie({
+            ...cookie,
+            memberId: data.memberId,
+          });
+          setMemberId(data.memberId);
+        }
+      } catch {
+      }
+    };
+
+    run();
+
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
-  if (!hasHydrated) return null;
-
-  if (memberId === null) {
-    const existing = getSignupFromCookie();
-    if (existing?.memberId) {
-      setMemberId(existing.memberId);
-    }
-  }
-
   const handleCopy = () => {
-    if (memberId) {
-      navigator.clipboard.writeText(memberId);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    }
+    if (!memberId) return;
+    navigator.clipboard.writeText(memberId);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
-  if (!memberId) {
+  if (!ready) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-[#050505] text-white">
-        <p className="font-pjs text-lg">No active membership found.</p>
+        <p className="text-gray-400">Loading your membership…</p>
       </div>
     );
   }
@@ -48,68 +78,67 @@ export default function SuccessPage() {
       <Image src={bgImage} alt="Background" fill priority />
 
       <div className="relative flex w-full max-w-xl flex-col items-center">
-        <h2 className="mb-4 text-5xl font-black text-white md:text-6xl">
-          🎉 YOU&apos;RE IN.
-        </h2>
-
-        <p className="mb-8 text-lg text-gray-400">
-          Voila! Here is your Membership ID:
-        </p>
-
-        <div className="relative mb-12 flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 px-8 py-5 backdrop-blur-md transition-all hover:border-white/20">
-          <span className="text-3xl font-bold text-white">{memberId}</span>
-
-          <button
-            type="button"
-            onClick={handleCopy}
-            className="flex items-center justify-center rounded-lg bg-white/10 p-2 text-blue-400 transition-colors hover:bg-white/20 active:scale-90"
-          >
-            {copied ? (
-              <CheckCircle2 size={22} className="text-green-400" />
-            ) : (
-              <Copy size={22} className="cursor-pointer" />
-            )}
-          </button>
-        </div>
-
-        <div className="mb-10 w-full rounded-2xl border border-white/5 bg-black/40 p-8 text-left">
-          <p className="mb-4 text-xl font-bold text-white uppercase">
-            You’ve unlocked:
+        {!memberId ? (
+          <p className="text-lg text-gray-400">
+            No active membership found.
           </p>
-          <ul className="space-y-3">
-            {[
-              "Early access to events",
-              "Brand & earning opportunities",
-              "Workshops & experiences",
-            ].map((item, i) => (
-              <li key={i} className="flex items-center gap-3 text-gray-300">
-                <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
+        ) : (
+          <>
+            <h2 className="mb-4 text-5xl font-black md:text-6xl">
+              🎉 YOU&apos;RE IN.
+            </h2>
 
-        <p className="mb-8 text-gray-400">
-          Next step drops inside the{" "}
-          <strong className="font-bold text-white">FRONT ROW</strong> community.
-        </p>
+            <p className="mb-8 text-lg text-gray-400">
+              Voila! Here is your Membership ID:
+            </p>
 
-        <Link
-          href="https://discord.gg/KPEjTbF4VA"
-          className="group font-pjs relative isolate flex w-full items-center justify-center rounded-xl bg-linear-to-r from-[#1ca6eb] from-0% via-[#3007d6] via-40% to-[#ff1b6b] to-100% px-8 py-4 text-lg font-bold tracking-widest text-white uppercase transition-all active:scale-[1]"
-        >
-          <span
-            aria-hidden
-            className="absolute inset-0 -z-10 translate-y-2 rounded-xl bg-linear-to-r from-[#1ca6eb] from-0% via-[#3007d6] via-40% to-[#ff1b6b] to-100% opacity-60 blur-xl transition-all group-hover:opacity-85 group-hover:blur-2xl"
-          />
+            <div className="mb-12 flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 px-8 py-5 backdrop-blur-md">
+              <span className="text-3xl font-bold">{memberId}</span>
 
-          <span className="absolute inset-0 rounded-xl ring-1 ring-white/25" />
+              <button
+                type="button"
+                onClick={handleCopy}
+                className="rounded-lg bg-white/10 p-2 text-blue-400 transition hover:bg-white/20"
+              >
+                {copied ? (
+                  <CheckCircle2 size={22} className="text-green-400" />
+                ) : (
+                  <Copy size={22} />
+                )}
+              </button>
+            </div>
 
-          <span className="absolute inset-0 rounded-xl bg-white/10" />
+            <div className="mb-10 w-full rounded-2xl border border-white/5 bg-black/40 p-8 text-left">
+              <p className="mb-4 text-xl font-bold uppercase">
+                You&apos;ve unlocked:
+              </p>
+              <ul className="space-y-3">
+                {[
+                  "Early access to events",
+                  "Brand & earning opportunities",
+                  "Workshops & experiences",
+                ].map(item => (
+                  <li key={item} className="flex items-center gap-3 text-gray-300">
+                    <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <span className="relative z-10">JOIN THE FRONT ROW COMMUNITY</span>
-        </Link>
+            <p className="mb-8 text-gray-400">
+              Next step drops inside the{" "}
+              <strong className="text-white">FRONT ROW</strong> community.
+            </p>
+
+            <Link
+              href="https://discord.gg/KPEjTbF4VA"
+              className="w-full rounded-xl bg-linear-to-r from-[#1ca6eb] via-[#3007d6] to-[#ff1b6b] px-8 py-4 text-lg font-bold uppercase tracking-widest transition hover:scale-[1.02]"
+            >
+              JOIN THE FRONT ROW COMMUNITY
+            </Link>
+          </>
+        )}
       </div>
     </section>
   );
