@@ -27,6 +27,7 @@ export default function Header() {
         className="mr-auto w-24 lg:w-51.75"
       />
 
+      {/* ================= DESKTOP NAV ================= */}
       <nav className="hidden gap-13.5 text-[17px] font-semibold text-[#382F68] lg:flex">
         <Link
           href={"/"}
@@ -42,6 +43,13 @@ export default function Header() {
         >
           <span>Our Work</span>
         </button>
+
+        <Link
+          href="/membership"
+          className="cursor-pointer underline decoration-transparent underline-offset-2 transition-all hover:decoration-[#382F68] active:text-[#234AFF] active:decoration-[#234AFF]"
+        >
+          Membership
+        </Link>
 
         <Link
           href="/about-us"
@@ -97,6 +105,7 @@ export default function Header() {
         <Menu size={24} />
       </button>
 
+      {/* ================= MOBILE NAV ================= */}
       <nav
         className={`${
           isNavOpen ? "right-0" : "-right-[75%]"
@@ -117,30 +126,23 @@ export default function Header() {
           </button>
         </div>
 
-        <Link
-          href={"/"}
-          className="cursor-pointer underline decoration-transparent underline-offset-2 transition-all hover:decoration-[#382F68] active:text-[#234AFF] active:decoration-[#234AFF]"
-        >
+        <Link href={"/"} className="cursor-pointer">
           <span>Home</span>
         </Link>
 
-        <button
-          type="button"
-          onClick={() => goTo("services")}
-          className="cursor-pointer underline decoration-transparent underline-offset-2 transition-all hover:decoration-[#382F68] active:text-[#234AFF] active:decoration-[#234AFF]"
-        >
+        <button type="button" onClick={() => goTo("services")}>
           <span>Our Work</span>
         </button>
 
-        <button
-          type="button"
-          onClick={() => goTo("about")}
-          className="cursor-pointer underline decoration-transparent underline-offset-2 transition-all hover:decoration-[#382F68] active:text-[#234AFF] active:decoration-[#234AFF]"
-        >
+        <Link href="/membership">
+          <span>Membership</span>
+        </Link>
+
+        <button type="button" onClick={() => goTo("about")}>
           <span>About Us</span>
         </button>
 
-        {/* ================= LOGIN SIGNUP TOGGLE (MOBILE) ================= */}
+        {/* LOGIN SIGNUP TOGGLE MOBILE */}
         <div className="mt-6 flex w-full rounded-full border border-[#382F68] overflow-hidden text-lg">
           <Link
             href="/login"
@@ -166,10 +168,10 @@ export default function Header() {
         <button
           type="button"
           onClick={() => goTo("contact")}
-          className="mt-auto flex cursor-pointer items-center gap-3 rounded-full bg-black px-4.25 py-2.5 transition-all hover:-translate-y-0.5 hover:shadow-[0px_2px_0px_0px_rgba(0,0,0,0.25)] active:translate-0 active:shadow-none lg:hidden"
+          className="mt-auto flex cursor-pointer items-center gap-3 rounded-full bg-black px-4.25 py-2.5"
         >
           <div className="size-3 rounded-full bg-[#4F52FF]/25 p-0.75">
-            <div className="size-1.5 animate-ping rounded-full bg-[#4F52FF] duration-300" />
+            <div className="size-1.5 animate-ping rounded-full bg-[#4F52FF]" />
           </div>
           <span className="text-xl font-bold text-white">
             Partner with Us
