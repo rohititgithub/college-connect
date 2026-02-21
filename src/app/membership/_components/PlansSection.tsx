@@ -5,7 +5,7 @@ import { useCart } from "@/hooks/useCart";
 import MonthlyMembership from "@/assets/monthly-membership.png";
 import QuaterlyMembership from "@/assets/quaterly-membership.png";
 import Bootcamp from "@/assets/bootcamp.png";
-import { toast } from "@/components/Toast";
+import { toast } from "@/components/toast";
 
 export default function PlansSection() {
   const { addToCart } = useCart();
