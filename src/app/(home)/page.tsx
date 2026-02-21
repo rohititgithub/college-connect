@@ -1,4 +1,4 @@
-import AboutSection from "./_components/AboutSection";
+// import AboutSection from "./_components/AboutSection";
 import BrandsSection from "./_components/BrandsSection";
 import CollegesSection from "./_components/CollegesSection";
 import ContactSection from "./_components/ContactSection";
@@ -19,7 +19,7 @@ export default function Home() {
       <BrandsSection />
       <StatsSection />
       <TestimonialsSection />
-      <AboutSection />
+      {/* <AboutSection /> */}
       <VisionMissionSection />
       <ContactSection />
     </div>

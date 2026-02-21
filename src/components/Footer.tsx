@@ -84,13 +84,14 @@ export default function Footer() {
           >
             <span>Our Work</span>
           </button>
-          <button
-            type="button"
-            onClick={() => goTo("home")}
+          <Link
+            href="/about-us"
+            
             className="cursor-pointer self-start underline decoration-transparent underline-offset-2 transition-all hover:decoration-[#4A5565] active:text-[#155DFC] active:decoration-[#155DFC]"
           >
-            <span>About Us</span>
-          </button>
+            About Us
+          </Link>
+          
           <button
             type="button"
             onClick={() => goTo("home")}
