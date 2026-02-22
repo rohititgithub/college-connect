@@ -6,7 +6,7 @@ import GoogleGLogo from "@/assets/Google_G_logo.svg";
 import Image from "next/image";
 import { useState } from "react";
 import { validateSignupForm } from "@/lib/validation";
-import { toast } from "@/components/toast";
+import { toast } from "@/components/Toast";
 import { AlertTriangle, CircleCheck } from "lucide-react";
 
 type FormErrors = {

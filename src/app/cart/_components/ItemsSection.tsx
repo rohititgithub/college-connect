@@ -8,7 +8,7 @@ import { useCartContext } from "@/context/CartContext";
 import { ShoppingCart, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { authenticate } from "@/actions/auth";
-import { toast } from "@/components/toast";
+import { toast } from "@/components/Toast";
 import { useAuth } from "@/context/AuthContext";
 
 export default function ItemsSection() {

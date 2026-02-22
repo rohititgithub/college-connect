@@ -7,8 +7,6 @@ import { NextResponse } from "next/server";
 // import { sendAuthEmail } from "@/lib/sendEmail";
 
 export async function POST(req: Request) {
- 
-
   await connectDB();
 
   try {
@@ -44,7 +42,7 @@ export async function POST(req: Request) {
       password: hashedPassword,
       emailVerified: false,
     });
-     console.log("SIGNUP API HIT");
+    // console.log("SIGNUP API HIT");
 
     // const token = generateToken();
     // console.log("🧾 SAVING EMAIL VERIFICATION TOKEN");

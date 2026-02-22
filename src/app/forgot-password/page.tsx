@@ -4,7 +4,7 @@ import INGLUGlobalLogo from "@/assets/Coll-Edge_Connect_Logo.svg";
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { toast } from "@/components/toast";
+import { toast } from "@/components/Toast";
 import { AlertTriangle, CircleCheck } from "lucide-react";
 
 export default function ForgotPassword() {

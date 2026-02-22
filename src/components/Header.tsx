@@ -8,6 +8,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { toast } from "@/components/Toast";
 
 import { useAuth } from "@/context/AuthContext";
 import { useCartContext } from "@/context/CartContext";
@@ -15,7 +16,6 @@ import { useNotifications } from "@/hooks/useNotifications";
 import { NOTIFICATION_ICONS } from "@/lib/notificationIcons";
 import Popover from "@/components/Popover";
 import { logoutAction } from "@/actions/auth";
-import { toast } from "@/components/toast";
 
 export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);

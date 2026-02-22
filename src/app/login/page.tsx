@@ -10,7 +10,7 @@ import { login } from "@/actions/auth";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/context/AuthContext";
 import { validateLoginForm } from "@/lib/validation";
-import { toast } from "@/components/toast";
+import { toast } from "@/components/Toast";
 
 type FormErrors = {
   email?: string;

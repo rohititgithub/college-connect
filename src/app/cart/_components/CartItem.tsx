@@ -3,7 +3,7 @@
 import { CircleCheck, Star, Trash2 } from "lucide-react";
 import Image from "next/image";
 import { useCart } from "@/hooks/useCart";
-import { toast } from "@/components/toast";
+import { toast } from "@/components/Toast";
 
 type CartItemProps = {
   productId: string;
