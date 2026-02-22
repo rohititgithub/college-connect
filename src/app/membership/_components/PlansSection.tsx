@@ -170,8 +170,6 @@ export default function PlansSection() {
           </div>
         </div>
       </div>
-      <div className="pointer-events-none absolute top-200 -right-30 -z-10 h-337.5 w-56 -rotate-7 rounded-[50%] bg-[#ECA1FF]/30 blur-2xl" />
-      <div className="pointer-events-none absolute bottom-150 -left-40 -z-10 h-337.5 w-56 -rotate-12 rounded-[50%] bg-[#C0A1FF]/50 blur-2xl" />
     </section>
   );
 }

@@ -1,7 +1,8 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
-import Link from "next/link";
+import Image from "next/image";
+import LogoIcon from "@/assets/Coll-Edge_Connect_Icon_Light.svg";
 export default function HeroSection() {
   function scrollToSection(id: string) {
     setTimeout(() => {
@@ -40,8 +41,15 @@ export default function HeroSection() {
           <span className="leading-tight text-[#155DFC]">Explore Benefits</span>
         </button>
       </div>
-      {/* <div className="pointer-events-none absolute -top-200 -right-5 -z-10 hidden h-337.5 w-56 -rotate-15 rounded-[50%] bg-[#ECA1FF]/40 blur-2xl xl:block" />
-      <div className="pointer-events-none absolute -top-100 -left-50 -z-10 hidden h-337.5 w-56 -rotate-12 rounded-[50%] bg-[#C0A1FF]/50 blur-2xl xl:block" /> */}
+
+      <div className="absolute top-8 -left-64 -z-10 hidden size-169.25 items-center rounded-full bg-[#9DBEE2]/50 blur-3xl lg:block" />
+      <div className="absolute top-40 -right-95 -z-10 hidden size-169.25 items-center rounded-full bg-[#4673EB] shadow-[0px_0px_120px_32px_rgba(70,115,235,0.34)] blur-[2px] lg:block" />
+      <Image
+        src={LogoIcon}
+        alt="Coll-Edge Connect Logo"
+        width={360}
+        className="absolute top-[calc(50%-3.25rem)] -right-40 hidden lg:block"
+      />
     </section>
   );
 }

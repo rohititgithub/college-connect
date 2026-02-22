@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Script from "next/script";
 import { AuthProvider } from "@/context/AuthContext";
 import { CartProvider } from "@/context/CartContext";
 const poppins = Poppins({
@@ -29,13 +30,13 @@ export default function RootLayout({
       <body className={`${poppins.variable} antialiased`}>
         <AuthProvider>
           <CartProvider>
-          <Header />
-          {children}
-          <Footer />
+            <Header />
+            {children}
+            <Footer />
+            <Script src="https://checkout.razorpay.com/v1/checkout.js" />
           </CartProvider>
         </AuthProvider>
       </body>
     </html>
   );
 }
-
