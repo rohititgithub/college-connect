@@ -36,6 +36,7 @@ export default function TicketSection() {
         if (data.success && data.tickets) {
           setTickets(data.tickets);
         }
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
       } catch (err) {
         console.error("Failed to load tickets");
       } finally {

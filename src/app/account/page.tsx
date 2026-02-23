@@ -1,7 +1,7 @@
 "use client";
 import AccountHeader from "./_components/AccountHeader";
 import AccountDetails from "./_components/AccountDetails";
-// import TicketSection from "./_components/TicketSection";
+import TicketSection from "./_components/TicketSection";
 import AccountPayments from "./_components/AccountPayments";
 
 export default function ProfilePage() {
@@ -12,7 +12,7 @@ export default function ProfilePage() {
 
         <AccountDetails />
 
-        {/* <TicketSection /> */}
+        <TicketSection />
         <AccountPayments />
       </div>
     </div>
