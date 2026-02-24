@@ -6,9 +6,13 @@ import MonthlyMembership from "@/assets/monthly-membership.png";
 import QuaterlyMembership from "@/assets/quaterly-membership.png";
 import Bootcamp from "@/assets/bootcamp.png";
 import { toast } from "@/components/Toast";
+import { useAuth } from "@/context/AuthContext";
+import { useRouter } from "next/navigation";
 
 export default function PlansSection() {
   const { addToCart } = useCart();
+  const { user } = useAuth();
+  const router = useRouter();
 
   const handleAddToCart = async (item: {
     productId: string;
@@ -18,6 +22,11 @@ export default function PlansSection() {
     quantity: number;
     rating: number;
   }) => {
+    if (!user) {
+      router.push("/login?redirect=/membership");
+      return;
+    }
+
     await addToCart(item);
 
     toast(

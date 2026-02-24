@@ -6,6 +6,8 @@ import Footer from "@/components/Footer";
 import Script from "next/script";
 import { AuthProvider } from "@/context/AuthContext";
 import { CartProvider } from "@/context/CartContext";
+import ToastContainer from "@/components/Toast";
+
 const poppins = Poppins({
   variable: "--font-poppins",
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -32,6 +34,7 @@ export default function RootLayout({
           <CartProvider>
             <Header />
             {children}
+            <ToastContainer />
             <Footer />
             <Script src="https://checkout.razorpay.com/v1/checkout.js" />
           </CartProvider>

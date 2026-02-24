@@ -23,7 +23,7 @@ export async function login(formData: LoginFormData) {
 
     if (!res.ok) {
       return {
-        error: data?.message || "Login failed. Please try again.",
+        error: data?.message,
       };
     }
 

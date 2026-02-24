@@ -5,19 +5,29 @@ import { verifyToken } from "@/lib/token";
 export function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
-  // Read token from cookies
   const token = req.cookies.get("auth_token")?.value;
 
-  /* ---------------------------------------------------
-     BLOCK LOGIN / SIGNUP FOR AUTHENTICATED USERS
-  --------------------------------------------------- */
+  /* -----------------------------------
+     BLOCK LOGIN / SIGNUP IF LOGGED IN
+  ----------------------------------- */
   if (token && (pathname === "/login" || pathname === "/signup")) {
     return NextResponse.redirect(new URL("/", req.url));
   }
 
-  /* ---------------------------------------------------
-     PROTECT ADMIN ROUTES (EXISTING LOGIC)
-  --------------------------------------------------- */
+  /* -----------------------------------
+     ✅ PROTECT MEMBERSHIP + CART
+  ----------------------------------- */
+  if (pathname.startsWith("/cart")) {
+    if (!token) {
+      return NextResponse.redirect(
+        new URL(`/login?redirect=${pathname}`, req.url),
+      );
+    }
+  }
+
+  /* -----------------------------------
+     ADMIN PROTECTION
+  ----------------------------------- */
   if (pathname.startsWith("/admin")) {
     if (!token) {
       return NextResponse.redirect(new URL("/login", req.url));
@@ -26,7 +36,6 @@ export function proxy(req: NextRequest) {
     try {
       const payload = verifyToken(token);
 
-      // Role-based authorization
       if (payload.role !== "ADMIN" && payload.role !== "SUPER_ADMIN") {
         return NextResponse.redirect(new URL("/unauthorized", req.url));
       }
@@ -39,5 +48,11 @@ export function proxy(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/admin/:path*", "/login", "/signup"],
+  matcher: [
+    "/admin/:path*",
+    "/cart/:path*",
+    "/cart/:path*",
+    "/login",
+    "/signup",
+  ],
 };

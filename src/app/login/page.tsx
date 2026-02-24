@@ -58,6 +58,13 @@ export default function Login({
     }
     try {
       const res = await login(formData);
+      console.log("LOGIN RESPONSE:", res);
+
+      if (res?.error?.toLowerCase().includes("user")) {
+        router.replace("/signup");
+        return;
+      }
+
       if (res?.error) {
         toast(
           <span className="flex items-center gap-2">
