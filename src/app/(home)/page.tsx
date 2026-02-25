@@ -7,7 +7,7 @@ import InfoSection from "./_components/InfoSection";
 import ServicesSection from "./_components/ServicesSection";
 import StatsSection from "./_components/StatsSection";
 import TestimonialsSection from "./_components/TestimonialsSection";
-import VisionMissionSection from "./_components/VisionMissionSection";
+// import VisionMissionSection from "./_components/VisionMissionSection";
 
 export default function Home() {
   return (
@@ -20,7 +20,7 @@ export default function Home() {
       <StatsSection />
       <TestimonialsSection />
       {/* <AboutSection /> */}
-      <VisionMissionSection />
+      {/* <VisionMissionSection /> */}
       <ContactSection />
     </div>
   );
