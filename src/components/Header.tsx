@@ -4,7 +4,7 @@ import { Menu, X, ShoppingCart, Bell, User, CircleCheck } from "lucide-react";
 import Logo from "@/assets/Coll-Edge_Connect_Logo.svg";
 import LogoIcon from "@/assets/Coll-Edge_Connect_Icon_Light.svg";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
@@ -33,11 +33,27 @@ export default function Header() {
   const latestThree = notifications.slice(0, 3);
   const unreadCount = notifications.length;
 
+  useEffect(() => {
+    if (isNavOpen) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "auto";
+
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsNavOpen(false);
+    };
+
+    window.addEventListener("keydown", handleEsc);
+
+    return () => {
+      document.body.style.overflow = "auto";
+      window.removeEventListener("keydown", handleEsc);
+    };
+  }, [isNavOpen]);
+
   function goTo(id: string) {
-    setIsNavOpen((prev) => !prev);
+    setIsNavOpen(false);
     setTimeout(() => {
       document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    }, 0);
+    }, 200);
   }
 
   async function handleLogout() {
@@ -57,45 +73,37 @@ export default function Header() {
   }
 
   return (
-    <header className="z-50 flex w-full max-w-7xl items-center gap-6 px-8 py-4 lg:mx-auto">
+    <header className="z-50 flex w-full max-w-7xl items-center gap-4 px-4 py-3 sm:px-6 md:px-8 lg:mx-auto lg:gap-6 lg:px-8 lg:py-4">
       <Image
         src={Logo}
         alt="Coll-Edge_Connect_Logo"
-        className="mr-auto w-24 lg:w-51.75"
+        className="mr-auto w-20 sm:w-24 md:w-32 lg:w-51.75"
       />
 
-      {/* ================= DESKTOP NAV ================= */}
-      <nav className="hidden gap-13.5 text-[17px] font-semibold text-[#382F68] lg:flex">
-        <Link href={"/"}>Home</Link>
-        <button type="button" onClick={() => goTo("services")}>
-          Our Work
-        </button>
+      <nav className="hidden gap-6 text-[15px] font-semibold text-[#382F68] md:gap-8 md:text-[16px] lg:flex lg:gap-13.5 lg:text-[17px]">
+        <Link href="/">Home</Link>
+        <button onClick={() => goTo("services")}>Our Work</button>
         <Link href="/about-us">About Us</Link>
         <Link href="/membership">Membership</Link>
       </nav>
 
       <button
-        type="button"
         onClick={() => goTo("contact")}
-        className="hidden cursor-pointer items-center gap-1.5 rounded-full bg-black px-4.25 py-2.5 transition-all hover:-translate-y-0.5 hover:shadow-[0px_2px_0px_0px_rgba(0,0,0,0.25)] active:translate-0 active:shadow-none lg:flex"
+        className="hidden cursor-pointer items-center gap-1.5 rounded-full bg-black px-3 py-2 text-sm transition-all hover:-translate-y-0.5 hover:shadow active:translate-0 active:shadow-none md:px-4 md:py-2.5 md:text-[15px] lg:flex"
       >
         <div className="size-3 rounded-full bg-[#4F52FF]/25 p-0.75">
-          <div className="size-1.5 animate-ping rounded-full bg-[#4F52FF] duration-300" />
+          <div className="size-1.5 animate-ping rounded-full bg-[#4F52FF]" />
         </div>
-        <span className="text-[15px] font-bold text-white">
-          Partner with Us
-        </span>
+        <span className="font-bold text-white">Partner with Us</span>
       </button>
 
-      {/* ================= RIGHT SIDE (DESKTOP) ================= */}
-      <div className="hidden items-center gap-3 lg:flex">
+      <div className="hidden items-center gap-2 md:gap-3 lg:flex">
         {!loading &&
           (isLoggedIn ? (
             <>
-              {/* CART */}
               <Link
                 href="/cart"
-                className="relative rounded-full border bg-white p-2.5"
+                className="relative rounded-full border bg-white p-2 md:p-2.5"
               >
                 <ShoppingCart size={20} />
                 {totalQuantity > 0 && (
@@ -105,7 +113,6 @@ export default function Header() {
                 )}
               </Link>
 
-              {/* NOTIFICATIONS */}
               <Popover
                 trigger={
                   <button className="relative rounded-full border bg-white p-2.5">
@@ -144,7 +151,6 @@ export default function Header() {
                 </div>
               </Popover>
 
-              {/* USER */}
               <Popover
                 width={220}
                 trigger={
@@ -157,7 +163,6 @@ export default function Header() {
                   <Link href="/account" className="px-3 py-2 hover:bg-gray-100">
                     My Account
                   </Link>
-
                   <button
                     onClick={handleLogout}
                     className="px-3 py-2 text-red-600 hover:bg-gray-100"
@@ -179,7 +184,6 @@ export default function Header() {
               >
                 Login
               </Link>
-
               <Link
                 href="/signup"
                 className={`px-4 py-2 text-[15px] font-semibold ${
@@ -194,31 +198,95 @@ export default function Header() {
           ))}
       </div>
 
-      {/* MOBILE MENU BTN */}
       <button
-        type="button"
-        onClick={() => setIsNavOpen((prev) => !prev)}
-        className="lg:hidden"
+        aria-label="Open Menu"
+        aria-expanded={isNavOpen}
+        onClick={() => setIsNavOpen(true)}
+        className="ml-auto transition-transform duration-200 active:scale-90 lg:hidden"
       >
-        <Menu size={24} />
+        <Menu size={26} />
       </button>
 
-      {/* ================= MOBILE NAV ================= */}
+      <div
+        onClick={() => setIsNavOpen(false)}
+        className={`fixed inset-0 z-40 bg-black/40 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
+          isNavOpen ? "visible opacity-100" : "invisible opacity-0"
+        }`}
+      />
+
       <nav
-        className={`${
-          isNavOpen ? "right-0" : "-right-[75%]"
-        } fixed top-0 z-50 flex h-dvh w-[75%] flex-col items-end gap-8 border-l-2 bg-[#E0E0E0] px-8 py-10 text-4xl transition-all duration-400 lg:hidden`}
+        className={`fixed top-0 right-0 z-50 flex h-dvh w-[85%] max-w-85 transform flex-col bg-[#E0E0E0] shadow-2xl transition-transform duration-300 ease-in-out ${isNavOpen ? "translate-x-0" : "translate-x-full"} lg:hidden`}
       >
-        <div className="flex w-full justify-between">
-          <Image src={LogoIcon} alt="Logo Icon" className="h-7.25" />
-          <button onClick={() => setIsNavOpen(false)}>
-            <X size={24} />
+        <div className="flex items-center justify-between border-b px-6 py-5">
+          <Image src={LogoIcon} alt="Logo Icon" className="h-8 w-auto" />
+          <button
+            aria-label="Close Menu"
+            onClick={() => setIsNavOpen(false)}
+            className="transition-transform duration-200 hover:rotate-90"
+          >
+            <X size={26} />
           </button>
         </div>
 
-        <Link href={"/"}>Home</Link>
-        <button onClick={() => goTo("services")}>Our Work</button>
-        <Link href="/membership">Membership</Link>
+        <div className="flex flex-col gap-6 px-6 py-8 text-xl font-semibold text-[#382F68] sm:text-2xl">
+          <Link href="/" onClick={() => setIsNavOpen(false)}>
+            Home
+          </Link>
+
+          <button onClick={() => goTo("services")} className="text-left">
+            Our Work
+          </button>
+
+          <Link href="/about-us" onClick={() => setIsNavOpen(false)}>
+            About Us
+          </Link>
+
+          <Link href="/membership" onClick={() => setIsNavOpen(false)}>
+            Membership
+          </Link>
+
+          {!loading && !isLoggedIn && (
+            <div className="mt-4 flex flex-col gap-4 border-t pt-6">
+              <Link
+                href="/login"
+                onClick={() => setIsNavOpen(false)}
+                className="rounded-full border px-4 py-2 text-center"
+              >
+                Login
+              </Link>
+
+              <Link
+                href="/signup"
+                onClick={() => setIsNavOpen(false)}
+                className="rounded-full bg-[#234AFF] px-4 py-2 text-center text-white"
+              >
+                Signup
+              </Link>
+            </div>
+          )}
+
+          {!loading && isLoggedIn && (
+            <div className="mt-4 flex flex-col gap-4 border-t pt-6">
+              <Link
+                href="/account"
+                onClick={() => setIsNavOpen(false)}
+                className="text-left"
+              >
+                My Account
+              </Link>
+
+              <button
+                onClick={() => {
+                  handleLogout();
+                  setIsNavOpen(false);
+                }}
+                className="text-left text-red-600"
+              >
+                Logout
+              </button>
+            </div>
+          )}
+        </div>
       </nav>
     </header>
   );

@@ -27,8 +27,6 @@ export default function ItemsSection() {
 
   const router = useRouter();
 
-  /* ================= CART ================= */
-
   async function refreshCart() {
     const cart = await getCart();
     const cartItems = cart.items;
@@ -50,8 +48,6 @@ export default function ItemsSection() {
     setTotalPrice(total);
     setFinalTotal(total);
   }
-
-  /* ================= PAYMENT ================= */
 
   async function handlePlaceOrder() {
     if (items.length < 1) {
@@ -110,7 +106,6 @@ export default function ItemsSection() {
           return;
         }
 
-        // 2️⃣ Save payment record
         const paymentRes = await fetch("/api/payment/create", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -129,7 +124,6 @@ export default function ItemsSection() {
           return;
         }
 
-        // 3️⃣ Create ticket BEFORE refreshing cart
         const ticketRes = await fetch("/api/ticket/create", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -150,7 +144,6 @@ export default function ItemsSection() {
           return;
         }
 
-        // 4️⃣ Now refresh cart after everything done
         setItems([]);
         setTotalQuantity(0);
         setTotalPrice(0);
@@ -167,14 +160,12 @@ export default function ItemsSection() {
     rzp.open();
   }
 
-  /* ================= EFFECTS ================= */
-
   useEffect(() => {
     if (loading) return;
     if (!user?._id) return;
 
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     refreshCart();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user?._id, loading]);
 
   useEffect(() => {
@@ -186,8 +177,6 @@ export default function ItemsSection() {
         if (data.success) setCoupons(data.data);
       });
   }, [isCouponOpen]);
-
-  /* ================= COUPON ================= */
 
   async function applyCoupon(code?: string) {
     const couponToApply = code || couponCode;
