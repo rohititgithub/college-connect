@@ -96,10 +96,13 @@ export default function ContactSection() {
   }
 
   return (
-    <div className="relative mx-auto w-325">
-      {/* CONTACT US HEADING */}
-      <h2 className="; mb-10 text-[40px] font-bold text-[#000000]">
-        Contact <span className="rounded-md bg-[#8EA2F3] px-2">us</span>
+    <div className="relative w-full max-w-325 px-4">
+      <h2 className="relative text-[32px] leading-tight font-bold lg:text-[64px]">
+        Contact{" "}
+        <span className="relative inline-block">
+          <span className="relative z-10">us</span>
+          <span className="absolute bottom-4 left-0 -z-10 h-15.5 w-21.25 rounded-[22px] bg-[#4673EB] opacity-60" />
+        </span>
       </h2>
 
       <section
