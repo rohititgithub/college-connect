@@ -268,7 +268,7 @@ export default function ItemsSection() {
 
             <button
               onClick={() => setIsCouponOpen(true)}
-              className="text-[#0042E9] uppercase"
+              className="cursor-pointer text-[#0042E9] uppercase"
             >
               {discount > 0 && appliedCoupon
                 ? `${appliedCoupon} - ₹ ${discount}`
@@ -291,7 +291,7 @@ export default function ItemsSection() {
         {/* PLACE ORDER */}
         <button
           onClick={handlePlaceOrder}
-          className="w-full rounded-xl bg-linear-to-r from-[#155DFC] to-[#5087FF] py-3 shadow sm:w-auto sm:self-end sm:px-16 lg:px-20"
+          className="w-full cursor-pointer rounded-xl bg-linear-to-r from-[#155DFC] to-[#5087FF] py-3 shadow sm:w-auto sm:self-end sm:px-16 lg:px-20"
         >
           <span className="text-lg font-medium text-white sm:text-2xl lg:text-[28px]">
             Place Order
