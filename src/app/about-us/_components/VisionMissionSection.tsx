@@ -28,7 +28,7 @@ export default function VisionMissionSection() {
             <span>And </span>
             <span className="text-[#4673EB]">Direction</span>
           </div>
-          <div className="absolute -bottom-48 -left-8 -z-10 size-75 rounded-full bg-[#4673EB]/25 blur-3xl" />
+
           <Image
             src={Dots}
             alt="Dots"
@@ -41,9 +41,9 @@ export default function VisionMissionSection() {
               Our Vision
             </span>
             <p className="lg:text-[20px]">
-              To become the most trusted platform that transforms how colleges
-              and brands collaborate, creating meaningful, memorable, and
-              impactful experiences for students.
+              &quot;To build a trusted platform that redefines how colleges and
+              brands collaborate—creating impactful, memorable, and meaningful
+              experiences for students.&quot;
             </p>
           </div>
           <div className="flex flex-col gap-4">
@@ -52,20 +52,22 @@ export default function VisionMissionSection() {
             </span>
             <ul className="list-outside list-disc pl-6 lg:text-[20px]">
               <li>
-                To bridge the gap between colleges and brands through a
-                seamless, tech-driven collaboration platform
+                To create a seamless, technology-driven platform that connects
+                colleges and brands, enabling meaningful collaborations and
+                impactful experiences
               </li>
               <li>
-                To empower colleges with valuable sponsorship and partnership
-                opportunities
+                To enable colleges to unlock meaningful sponsorships and
+                strategic partnerships that drive growth and impactful
+                experiences
               </li>
               <li>
-                To help brands engage authentically with student communities at
-                scale
+                Enable brands to connect authentically with student communities
+                at scale
               </li>
               <li>
-                To create win-win partnerships that enhance student experiences
-                and brand visibility
+                Build win-win partnerships that enhance student experiences
+                while boosting brand visibility
               </li>
             </ul>
           </div>

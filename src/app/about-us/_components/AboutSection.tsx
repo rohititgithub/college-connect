@@ -1,19 +1,18 @@
 "use client";
 import { useState } from "react";
 import AboutUsGraphics from "@/assets/Group.svg";
-// import LogoIcon from "@/assets/Coll-Edge_Connect_Icon_Light.svg";
 import Image from "next/image";
 
 export default function AboutSection() {
   const [tab, setTab] = useState<"identity" | "work">("work");
   const tabContent = {
     identity: [
-      "Coll-Edge Connect is a tech-driven platform that bridges the gap between colleges and brands.",
-      "We believe in fostering meaningful collaborations that empower students, enhance campus experiences, and help brands become a part of students' most memorable moments. With a strategic and innovation-led approach, we work to shape the future of student-brand engagement.",
+      "College Connect is a tech-driven platform that bridges the gap between colleges and brands.",
+      "We focus on building meaningful collaborations that empower students, enhance campus experiences, and help brands connect with youth culture. Through a strategic and innovation-led approach, we aim to redefine student-brand engagement.",
     ],
     work: [
-      "We help college events secure the right sponsorships, brand collaborations, and partnerships—making event planning smoother and more impactful.",
-      "We work closely with college fests, cultural events, technical events, and student-led initiatives to connect them with brands that align with their audience and vision. From initial outreach to final execution, we manage the entire sponsorship process.",
+      "We enable college events to secure the right sponsorships, brand collaborations, and partnerships—making event execution smoother and more impactful.",
+      "From cultural fests to technical events and student-led initiatives, we connect campuses with brands that align with their audience and vision. We handle the complete sponsorship lifecycle—from outreach to execution.",
     ],
   };
 
@@ -68,18 +67,6 @@ export default function AboutSection() {
             tabContent.work.map((para, index) => <p key={index}>{para}</p>)}
         </div>
       </div>
-
-      <div className="absolute -top-4 -left-28 -z-10 size-75 rounded-full bg-[#4673EB]/25 blur-3xl" />
-      <div className="absolute right-0 -bottom-48 -z-10 size-75 rounded-full bg-[#4673EB]/25 blur-3xl" />
-
-      {/* <div className="absolute top-8 -left-64 -z-10 hidden size-169.25 items-center rounded-full bg-[#9DBEE2]/50 blur-3xl lg:block" /> */}
-      {/* <div className="absolute top-18 -right-120 -z-10 hidden size-169.25 items-center rounded-full bg-[#4673EB] shadow-[0px_0px_120px_32px_rgba(70,115,235,0.34)] blur-[2px] lg:block" /> */}
-      {/* <Image
-        src={LogoIcon}
-        alt="Coll-Edge Connect Logo"
-        width={360}
-        className="absolute top-[calc(50%-3.25rem)] -right-64 hidden lg:block"
-      /> */}
     </section>
   );
 }
