@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import INGLUGlobalLogo from "@/assets/Coll-Edge_Connect_Logo.svg";
+import INGLUGlobalLogo from "@/assets/cc.svg";
 import GoogleGLogo from "@/assets/Google_G_logo.svg";
 import Image from "next/image";
 import { useState } from "react";

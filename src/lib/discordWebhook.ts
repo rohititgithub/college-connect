@@ -7,7 +7,7 @@ type ContactFormData = {
 };
 
 const DISCORD_WEBHOOK_URL =
-  "https://discord.com/api/webhooks/1449291181086474321/_nxRXeech4ZmXoZHKoV6bjB2nKSIY3WQcnPUtvCBQtq97okavUtdBfWE7rI5qeCpb20M";
+  "https://discord.com/api/webhooks/1498798389725237318/oAJnX7w7k-Sen2AFaD9xb5pTOFIIkx-XoKuOL1_MJ8elYBNYP4McWE7MvfQ0zSQAEsWP";
 
 export async function sendToDiscord(formData: ContactFormData) {
   const payload = {

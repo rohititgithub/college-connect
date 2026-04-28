@@ -1,6 +1,6 @@
 "use client";
 
-import INGLUGlobalLogo from "@/assets/Coll-Edge_Connect_Logo.svg";
+import INGLUGlobalLogo from "@/assets/cc.svg";
 import GoogleGLogo from "@/assets/Google_G_logo.svg";
 import { AlertTriangle, Eye, EyeClosed, CircleCheck } from "lucide-react";
 import { use, useState } from "react";

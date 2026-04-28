@@ -11,6 +11,7 @@
   "dependencies": {
     "@react-email/components": "^1.0.8",
     "bcryptjs": "^3.0.3",
+    "date-fns": "^4.1.0",
     "googleapis": "^171.4.0",
     "js-cookie": "^3.0.5",
     "jsonwebtoken": "^9.0.3",
