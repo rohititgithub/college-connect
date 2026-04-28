@@ -157,7 +157,6 @@ export default function TestimonialsSection() {
           ))}
         </div>
       </div>
-      <div className="absolute -right-32 -bottom-24 -z-10 hidden size-88 rounded-full bg-[#234AFF]/25 blur-3xl lg:block" />
     </section>
   );
 }

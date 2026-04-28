@@ -7,19 +7,19 @@ export default function InfoSection() {
   return (
     <section className="mx-auto mt-0 flex w-full max-w-6xl flex-col items-center px-4 md:gap-8">
       <span className="font-plus-jakarta-sans text-center text-3xl md:text-5xl">
-        What is INGLU Membership?
+        What is Membership?
       </span>
 
       <div className="flex w-full flex-col gap-10 lg:flex-row lg:items-center lg:gap-16">
         <div className="mt-10 flex flex-1 flex-col gap-7 text-lg text-[#364153] lg:max-w-xl">
           <p>
-            INGLU Membership is a monthly subscription-based program that opens
+            This membership is a monthly subscription-based program that opens
             doors to countless opportunities for students and young
             professionals.
           </p>
           <p>
-            As a member, you&apos;ll enjoy special discounts, exciting
-            giveaways, volunteering opportunities with NGOs, and recognition for
+            As a member, you’ll enjoy special discounts, exciting giveaways,
+            volunteering opportunities with organizations, and recognition for
             your achievements.
           </p>
         </div>

@@ -1,8 +1,8 @@
 "use client";
 
 import { Menu, X, ShoppingCart, Bell, User, CircleCheck } from "lucide-react";
-import Logo from "@/assets/Coll-Edge_Connect_Logo.svg";
-import LogoIcon from "@/assets/Coll-Edge_Connect_Icon_Light.svg";
+import Logo from "@/assets/cc.svg";
+// import LogoIcon from "@/assets/Coll-Edge_Connect_Icon_Light.svg";
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
@@ -82,20 +82,12 @@ export default function Header() {
 
       <nav className="hidden gap-6 text-[15px] font-semibold text-[#382F68] md:gap-8 md:text-[16px] lg:flex lg:gap-13.5 lg:text-[17px]">
         <Link href="/">Home</Link>
-        <button onClick={() => goTo("services")}>Our Work</button>
+        <button onClick={() => goTo("services")} className="cursor-pointer">
+          Our Work
+        </button>
         <Link href="/about-us">About Us</Link>
         <Link href="/membership">Membership</Link>
       </nav>
-
-      <button
-        onClick={() => goTo("contact")}
-        className="hidden cursor-pointer items-center gap-1.5 rounded-full bg-black px-3 py-2 text-sm transition-all hover:-translate-y-0.5 hover:shadow active:translate-0 active:shadow-none md:px-4 md:py-2.5 md:text-[15px] lg:flex"
-      >
-        <div className="size-3 rounded-full bg-[#4F52FF]/25 p-0.75">
-          <div className="size-1.5 animate-ping rounded-full bg-[#4F52FF]" />
-        </div>
-        <span className="font-bold text-white">Partner with Us</span>
-      </button>
 
       <div className="hidden items-center gap-2 md:gap-3 lg:flex">
         {!loading &&
@@ -218,7 +210,6 @@ export default function Header() {
         className={`fixed top-0 right-0 z-50 flex h-dvh w-[85%] max-w-85 transform flex-col bg-[#E0E0E0] shadow-2xl transition-transform duration-300 ease-in-out ${isNavOpen ? "translate-x-0" : "translate-x-full"} lg:hidden`}
       >
         <div className="flex items-center justify-between border-b px-6 py-5">
-          <Image src={LogoIcon} alt="Logo Icon" className="h-8 w-auto" />
           <button
             aria-label="Close Menu"
             onClick={() => setIsNavOpen(false)}

@@ -1,14 +1,6 @@
-"use client"
-import {
-  Facebook,
-  Instagram,
-  Linkedin,
-  Mail,
-  MapPin,
-  Phone,
-  Youtube,
-} from "lucide-react";
-import Logo from "@/assets/Coll-Edge_Connect_Logo.svg";
+"use client";
+import { Instagram, Linkedin, Mail, Phone, Github } from "lucide-react";
+import Logo from "@/assets/cc.svg";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -31,34 +23,27 @@ export default function Footer() {
             width={173}
             className="self-start"
           />
-          <span className="hidden lg:block">
+          {/* <span className="hidden lg:block">
             India&apos;s fastest bridge between Colleges & Brands. Sponsorships,
             activations and engagement simplified
-          </span>
+          </span> */}
           <div className="hidden gap-4 lg:flex">
             <Link
-              href={""}
-              target="_blank"
-              className="rounded-full bg-[#F3F4F6] p-2.5 transition-all hover:opacity-75 active:opacity-50"
-            >
-              <Facebook size={20} />
-            </Link>
-            <Link
-              href={"https://www.linkedin.com/company/coll-edge-connect/"}
+              href={"https://www.linkedin.com/in/rohit-kumar6200/"}
               target="_blank"
               className="rounded-full bg-[#F3F4F6] p-2.5 transition-all hover:opacity-75 active:opacity-50"
             >
               <Linkedin size={20} />
             </Link>
             <Link
-              href={""}
+              href={"https://github.com/rohititgithub"}
               target="_blank"
               className="rounded-full bg-[#F3F4F6] p-2.5 transition-all hover:opacity-75 active:opacity-50"
             >
-              <Youtube size={20} />
+              <Github size={20} />
             </Link>
             <Link
-              href={"https://www.instagram.com/colledge_connect/"}
+              href={"https://www.instagram.com/rohitc0des/"}
               target="_blank"
               className="rounded-full bg-[#F3F4F6] p-2.5 transition-all hover:opacity-75 active:opacity-50"
             >
@@ -86,12 +71,11 @@ export default function Footer() {
           </button>
           <Link
             href="/about-us"
-            
             className="cursor-pointer self-start underline decoration-transparent underline-offset-2 transition-all hover:decoration-[#4A5565] active:text-[#155DFC] active:decoration-[#155DFC]"
           >
             About Us
           </Link>
-          
+
           <button
             type="button"
             onClick={() => goTo("home")}
@@ -104,24 +88,18 @@ export default function Footer() {
         {/* Contact information */}
         <div className="flex w-75 flex-col gap-3 lg:ml-auto lg:gap-6">
           <span className="text-black">Contact</span>
-          <div className="hidden gap-2 lg:flex">
-            <MapPin size={24} className="min-w-6 text-[#155DFC]" />
-            <span>198, SatyaNiketan, 3rd Floor, New Delhi - 110021</span>
-          </div>
+
           <div className="flex gap-2">
             <Mail size={24} className="min-w-6 text-[#155DFC]" />
             <Link href={"mailto:info@colledgeconnect.in"}>
-              <span>info@colledgeconnect.in</span>
+              <span>rohitkumarsahu6200@gmail.com</span>
             </Link>
           </div>
           <div className="flex gap-2">
             <Phone size={24} className="min-w-6 text-[#155DFC]" />
             <div className="flex gap-2">
               <Link href={"tel:+91-7042336388"}>
-                <span>+91 7042336388,</span>
-              </Link>
-              <Link href={"tel:+91-9711692922"}>
-                <span>+91 9711692922</span>
+                <span>+91 6200196712</span>
               </Link>
             </div>
           </div>
@@ -130,7 +108,7 @@ export default function Footer() {
 
       {/* Copyright notice */}
       <span className="self-center text-xs lg:text-base">
-        © 2025 COLL-EDGE CONNECT. All rights reserved.
+        © 2025 COLLEGE CONNECT. All rights reserved.
       </span>
     </footer>
   );

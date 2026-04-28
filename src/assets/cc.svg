@@ -1,0 +1,42 @@
+<svg width="360" height="110" viewBox="0 0 360 110" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient -->
+    <linearGradient id="gradMain" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7C3AED"></stop>
+      <stop offset="100%" stop-color="#06B6D4"></stop>
+    </linearGradient>
+
+    <!-- Soft Glow -->
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"></feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="coloredBlur"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Icon Background -->
+  <circle cx="60" cy="55" r="42" fill="url(#gradMain)" filter="url(#softGlow)"></circle>
+
+  <!-- CC Monogram -->
+  <text x="42" y="63" font-family="Poppins, Inter, sans-serif" font-size="26" font-weight="700" fill="white">
+    CC
+  </text>
+
+  <!-- Graduation Cap -->
+  <polygon points="40,35 60,28 80,35 60,42" fill="white" opacity="0.95"></polygon>
+  <rect x="58" y="42" width="4" height="10" fill="white"></rect>
+
+  <!-- Connection Arc -->
+  <path d="M25 55 Q60 15 95 55" stroke="white" stroke-width="2" fill="none" opacity="0.8"></path>
+
+  <!-- Brand Text -->
+  <text x="120" y="60" font-family="Poppins, Inter, sans-serif" font-size="28" font-weight="600" fill="#0F172A">
+    College
+  </text>
+
+  <text x="120" y="88" font-family="Poppins, Inter, sans-serif" font-size="28" font-weight="700" fill="url(#gradMain)">
+    Connect
+  </text>
+</svg>
