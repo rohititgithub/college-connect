@@ -11,7 +11,7 @@ export default function Membership() {
     <div className="flex flex-col gap-8 overflow-x-clip pt-24 lg:gap-24">
       <HeroSection />
       <InfoSection />
-       <PlansSection /> 
+      <PlansSection />
       <BenefitsSection />
       <CTASection />
     </div>

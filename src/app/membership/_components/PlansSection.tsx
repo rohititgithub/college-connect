@@ -42,14 +42,15 @@ export default function PlansSection() {
   return (
     <section
       id="plans"
-      className="mx-auto flex w-7xl scroll-mt-24 flex-col items-center gap-14"
+      className="mx-auto flex max-w-7xl scroll-mt-24 flex-col items-center gap-14 px-4"
     >
       <span className="font-plus-jakarta-sans text-5xl">
         Choose the Plan That Fits Your Needs
       </span>
 
-      <div className="flex w-full items-center gap-6">
-        <div className="h-fit flex-1 rounded-3xl bg-[#E5E7EB] p-px shadow-lg">
+      <div className="flex w-full flex-col items-center gap-6 md:flex-row">
+        {/* Monthly */}
+        <div className="h-fit w-full rounded-3xl bg-[#E5E7EB] p-px shadow-lg md:flex-1">
           <div className="flex w-full flex-col gap-8 rounded-[23px] bg-white p-8">
             <div className="flex w-full flex-col items-center gap-2">
               <span className="text-2xl">Monthly Plan</span>
@@ -90,7 +91,8 @@ export default function PlansSection() {
           </div>
         </div>
 
-        <div className="relative h-full flex-1 rounded-3xl bg-linear-to-br from-[#FD2465] to-[#F83191] p-0.5 shadow-2xl">
+        {/* Quarterly */}
+        <div className="relative h-full w-full rounded-3xl bg-linear-to-br from-[#FD2465] to-[#F83191] p-0.5 shadow-2xl md:flex-1">
           <div className="absolute -top-4 right-1/2 flex translate-x-1/2 items-center gap-1 rounded-full bg-linear-to-br from-[#FD2465] to-[#F83191] px-4 py-1.5 text-white">
             <Sparkles size={15} strokeWidth={2} />
             <span className="text-sm">Recommended</span>
@@ -137,7 +139,8 @@ export default function PlansSection() {
           </div>
         </div>
 
-        <div className="h-fit flex-1 rounded-3xl bg-[#E5E7EB] p-px shadow-lg">
+        {/* Yearly */}
+        <div className="h-fit w-full rounded-3xl bg-[#E5E7EB] p-px shadow-lg md:flex-1">
           <div className="flex w-full flex-col gap-8 rounded-[23px] bg-white p-8">
             <div className="flex w-full flex-col items-center gap-2">
               <span className="text-2xl">Yearly Plan</span>
