@@ -4,7 +4,7 @@ import { useCartContext } from "@/context/CartContext";
 export function useCart() {
   const { user } = useAuth();
   const { setTotalQuantity, bumpCart } = useCartContext();
-  const MAX_CART_LIMIT = 10;
+  const MAX_CART_LIMIT = 1;
 
   const requestHeaders = {
     "Content-Type": "application/json",
@@ -40,8 +40,11 @@ export function useCart() {
       0,
     );
 
-    if (currentTotal + 1 > MAX_CART_LIMIT) {
-      return { error: "LIMIT_EXCEEDED" };
+    if (currentTotal >= MAX_CART_LIMIT) {
+      await fetch("/api/cart", {
+        method: "DELETE",
+        headers: requestHeaders,
+      });
     }
 
     await fetch("/api/cart", {

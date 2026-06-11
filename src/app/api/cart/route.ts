@@ -79,15 +79,15 @@ export async function DELETE(req: Request) {
     return NextResponse.json(null, { status: 400 });
   }
 
-  const body: { productId: string } = await req.json();
+  // const body: { productId: string } = await req.json();
   await connectDB();
 
   const cart = await Cart.findOne({ userId });
   if (!cart) return NextResponse.json({ userId, items: [] });
-
-  cart.items = cart.items.filter(
-    (item: CartItem) => item.productId !== body.productId,
-  );
+  cart.items = [];
+  // cart.items = cart.items.filter(
+  //   (item: CartItem) => item.productId !== body.productId,
+  // );
 
   await cart.save();
 
