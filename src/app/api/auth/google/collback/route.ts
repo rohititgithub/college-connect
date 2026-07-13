@@ -61,7 +61,7 @@ export async function GET(req: Request) {
       );
     }
 
-    const response = NextResponse.redirect(new URL("/", req.url));
+    const response = NextResponse.redirect(new URL("/memberships", req.url));
 
     response.cookies.set(
       "auth_token",
