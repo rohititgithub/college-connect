@@ -6,12 +6,12 @@ Coll-Edge Connect is a modern full-stack web platform designed to connect colleg
 
 The platform is built with Next.js, React, TypeScript, Tailwind CSS, MongoDB, and modern API-driven architecture, with integrated authentication, notifications, cart management, memberships, payments, email workflows, and Google Sheets synchronization.
 
-""Next.js" (https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)" (https://nextjs.org/)
-""React" (https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black)" (https://react.dev/)
-""TypeScript" (https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)" (https://www.typescriptlang.org/)
-""Tailwind CSS" (https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)" (https://tailwindcss.com/)
-""MongoDB" (https://img.shields.io/badge/MongoDB-9-47A248?style=for-the-badge&logo=mongodb&logoColor=white)" (https://www.mongodb.com/)
-""Razorpay" (https://img.shields.io/badge/Razorpay-Payments-0C0C0C?style=for-the-badge)" (https://razorpay.com/)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-9-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![Razorpay](https://img.shields.io/badge/Razorpay-Payments-0C0C0C?style=for-the-badge)](https://razorpay.com/)
 
 ---
 
